@@ -1,5 +1,10 @@
 <?php 
 
-echo "about";
+echo "About";
+
+// Выводим шаблоны
+include ROOT . "templates/_parts/_header.tpl";
+include ROOT . "templates/about/about.tpl";
+include ROOT . "templates/_parts/_footer.tpl";
 
  ?>
