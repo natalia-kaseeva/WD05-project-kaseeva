@@ -1,7 +1,5 @@
 <?php 
 
-echo "About";
-
 // Выводим шаблоны
 include ROOT . "templates/_parts/_header.tpl";
 include ROOT . "templates/about/about.tpl";
