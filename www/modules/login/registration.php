@@ -1,6 +1,6 @@
 <?php 
 
-//$title = "Регистрация";
+$title = "Регистрация";
 
 
 // Если форма отправлена - то делаем регистрацию
@@ -33,8 +33,8 @@ if ( isset($_POST['enter-button'])) {
 			$_SESSION['login'] = "1";
 			$_SESSION['role'] = $user->role;
 
-			//header('Location: ' . HOST . "profile-edit");
-			header('Location: ' . HOST);
+			header('Location: ' . HOST . "profile");
+			//header('Location: ' . HOST);
 			exit();
 
 		}
@@ -46,7 +46,7 @@ include ROOT . "templates/login/form-registration.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
-//include ROOT . "templates/_parts/_header.tpl";
+include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/login/login-page.tpl";
 //include ROOT . "templates/_parts/_footer.tpl";
 

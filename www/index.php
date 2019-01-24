@@ -44,7 +44,7 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/login/set-new-password.php";
 		break;
 
-	/*case 'profile':
+	case 'profile':
 		include ROOT . "modules/profile/index.php";
 		break;
 
@@ -52,7 +52,7 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/profile/edit.php";
 		break;
 
-	case 'blog':
+	/*case 'blog':
 		echo "Blog page";
 		echo "<br>";
 		echo "$uri[1]";

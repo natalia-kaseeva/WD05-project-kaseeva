@@ -13,5 +13,9 @@ define('ROOT', dirname(__FILE__).'/');
 
 $errors = array();
 
+// SITE SETTINGS FOR EMAILS
+define('SITE_NAME', 'личный сайт Юрия Ключевского');
+define('SITE_EMAIL', 'info@webdev03.com');
+define('ADMIN_EMAIL', 'info@rightblog.ru');
 
 ?>
