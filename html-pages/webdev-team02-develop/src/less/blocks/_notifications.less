@@ -1,0 +1,38 @@
+.notification {
+	color: @white;
+}
+
+.notification__title {
+	padding: 14px 16px;
+	background-image: linear-gradient( 0deg, rgb(61,122,160) 0%, rgb(138,187,218) 100%);
+	.rounded(4px);
+}
+
+.notification--with-description {
+	.border-radius(4px, 0px, 0px, 4px);
+}
+
+.notification__description {
+	background: #e0e9ee;
+	color: #38505e;
+	line-height: 1.5;
+	padding: 14px 16px 5px;
+	.border-radius(0px, 4px, 4px, 0px);
+	
+	p {
+		margin-top: 0;
+		margin-bottom: 14px;
+	}
+
+	a {
+		color: #38505e;
+	}
+}
+
+.notification--success {
+	background-image: linear-gradient( 0deg, rgb(8,113,28) 0%, rgb(44,185,81) 100%);
+}
+
+.notification--error {
+	background-image: linear-gradient( 0deg, rgb(151,21,21) 0%, rgb(201,50,50) 100%);
+}

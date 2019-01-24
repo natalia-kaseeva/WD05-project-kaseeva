@@ -1,0 +1,55 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Обо мне редактировать – Информация - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35.pb-40
+            h1 Обо мне редактировать – Информация
+
+            .section-ui
+                include ../about-me-edit-information.pug
+                
+            .section-ui.mt-20
+                .title-2 pages/about-me-edit-information.pug
+
+                pre.
+                    extends ../layouts/page-layout/page.pug
+
+                    block variables
+                        - var title = 'Обо мне редактировать – Информация';
+                        - var pageClass = 'content-page';
+
+                    block content
+                        include ../sections/header-admin.pug
+                        include ../sections/header-user.pug
+
+                        .about-me-edit
+                            .container
+                                .row
+                                    .col-md-10.offset-md-1
+                                        
+                                        h1.title-general.edit-title--color.mt-0.mb-35 Редактировать - Обо Мне
+                                        
+                                        form#about-me-edit-info.about-me-edit-info-form
+                                            .edit-name
+                                                +input('fullName','text','Введите имя и фамилию','Имя, фамилия','editFullName')
+                                                
+                                            .upload-photo.mt-30.mb-35
+                                                .upload-photo__title Фотография
+                                                .upload-photo__description Изображение jpg или png, рекомендуемый размер 205px на 205px, вес до 2Мб.
+                                                +file('Выбрать файл', 'Файл не выбран', 'fileUpload','fileUpload',false)
+                                                .upload-photo__result
+                                                    +Img('avatars/avatar.jpg','user-photo')
+                                            
+                                            .edit-information
+                                                +textarea('about-me-info','Напишите информацию о себе','Информация на главной','about-me-edit-info')(class="edit-information__textarea")
+
+                                            .about-me-edit-buttons
+                                                +buttonSubmit('Сохранить', 'save-button', 'save')(class="mr-20")
+                                                +buttonSubmit('Отмена', 'cancellation')
+
+                        include ../sections/footer.pug
+                

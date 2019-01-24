@@ -1,0 +1,77 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Нотификации - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.pt-35
+			h1 Нотификации
+			
+			.section-ui
+
+				.title-2 Простая нотификация
+
+				+notification('Информация обновлена')
+				
+				.title-2 Нотификация успех
+
+				+notification('Запись создана успешно', 'success')
+
+				.title-2 Нотификация ошибка
+
+				+notification('Комментарий не может быть пустым', 'error')
+
+				.title-2 Нотификация c описанием
+
+				+notification('Данный email уже занят', 'error')
+					p.
+						Используйте другой email чтобы создать новый аккаунт.
+					p.
+						Или воспользуйтесь #[a(href="#") восстановлением пароля], чтобы войти на сайт.
+			
+			pre.
+				+notification('Информация обновлена')
+
+				+notification('Запись создана успешно', 'success')
+
+				+notification('Комментаприй не может быть пустым', 'error')
+
+				+notification('Данный email уже занят', 'error')
+					p.
+						Используйте другой email чтобы создать новый аккаунт.
+					p.
+						Или воспользуйтесь #[a(href="#") восстановлением пароля], чтобы войти на сайт.
+				
+			.title mixins/_notifications.pug
+			
+			pre.
+				mixin notification(title, type)
+					if type == 'success'
+						if block
+							.notification
+								.notification__title.notification--success.notification--with-description #{'#{title'}}
+								.notification__description
+									block
+						else
+							.notification
+								.notification__title.notification--success #{'#{title'}}
+					else if type == 'error'
+						if block
+							.notification
+								.notification__title.notification--error.notification--with-description #{'#{title'}}
+								.notification__description
+									block
+						else
+							.notification
+								.notification__title.notification--error #{'#{title'}}
+					else
+						if block
+							.notification
+								.notification__title.notification--with-description #{'#{title'}}
+								.notification__description
+									block
+						else
+							.notification
+								.notification__title #{'#{title'}}

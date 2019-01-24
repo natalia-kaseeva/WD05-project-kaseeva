@@ -1,0 +1,29 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	
+	- var title = 'Секция "Обо мне" - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.pt-35
+			h1.user-content Секция "Обо мне"
+			
+			.section-ui
+				include ../../sections/about-me.pug
+			pre.
+				include ../../sections/about-me.pug
+			.title sections/about-me.pug
+			pre.
+				.about-me.container.section
+				.wrapper-space-around
+					.about-me__avatar.col-md-3
+						+avatar('avatar.jpg', 'alt text avatar')
+					.about-me__description.col-md-9
+						h1.title-1.tite-1--blue Емельян Казаков
+						p.paragraph.
+							Я веб разработчик из Казани. Мне 28 лет. Занимаюсь разработкой современных сайтов и приложений...
+						.about-me__button
+							+button('Подробнее', '#', 'primary')
+				+horisontal-line()

@@ -1,0 +1,31 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Страница поста с блогом - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+            h1 Страница поста с блогом
+            .section-ui
+                include ../blog-post-page.pug
+            .section-ui
+                .title-2 Код страницы
+                pre.
+                    extends ../layouts/page-layout/page.pug
+
+                    block variables
+                        - var title = 'Страница поста с блогом';
+                        - var pageClass = 'content-page';
+
+                    block content
+                        include ../sections/header-admin.pug
+                        include ../sections/header-user.pug
+                        .container.pt-80.pb-120
+                            .row
+                                .col-10.offset-1
+                                    include ../sections/blog-post.pug
+                                    include ../sections/user-comments.pug
+                                    include ../sections/comments-submit.pug
+                        include ../sections/footer.pug

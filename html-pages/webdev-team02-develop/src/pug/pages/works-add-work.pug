@@ -1,0 +1,36 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Работы-добавить работу';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/header-admin.pug
+		include ../sections/header-guest.pug
+		.sticky-footer-content
+			.container.add-works.pl-0.pr-0.pt-80.pb-120
+				.row.ml-0.mr-0
+					.col-10.offset-1.pl-0.pr-0
+						.add-works__title
+							h1.title-general.mt-0.mb-0 Добавить работу
+						form(action="#!").add-works__form.mt-40
+							.add-works__form-item.mb-30
+								+input('workName','text','Введите название работы','Название','field-work-name')
+							.add-works__form-item.mb-30
+								+upload-file-no-img("Изображение", "Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.")
+							.add-works__form-item.mb-30
+								+textarea('workDescription','Введите описание','Содержание', 'description-work')
+							.add-works__form-item.mb-30
+								+textarea('workResult','Введите описание','Результат','result-work')
+							.add-works__form-item.mb-30
+								+textarea('workTechnology','Введите описание','Технологии','tech-for-work')
+							.row.ml-0.mr-0
+								.col-3.no-paddings.mr-30
+									+input('linkProject','url','Введите ссылку','Ссылка на проект','field-link-project')
+								.col-3.no-paddings
+									+input('linkGithub','url','Введите ссылку','Ссылка на GitHub','link-on-github')
+							.row.ml-0.mr-0.mt-30
+								+buttonSubmit('Сохранить', 'save-button-work', 'save')(class="mr-20")
+								+buttonSubmit('Отмена', 'cancel-add-work')
+		include ../sections/footer.pug

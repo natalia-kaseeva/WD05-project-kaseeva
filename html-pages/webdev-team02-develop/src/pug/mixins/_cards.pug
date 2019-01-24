@@ -1,0 +1,14 @@
+mixin cardBlog(img, title, link)
+    .card-box
+        .card-box__img-blog
+            img(src=img)
+        .card-box__title #{title}
+        +button('Читать', '#', 'primary')(class="card-box--button")
+        
+mixin cardPortfolio(img, title, link)
+    .card-box.card-box--height
+        .card-box__img-portfolio
+            img(src=img)
+        .card-box__title #{title}
+        +button('Смотреть кейс', '#', 'primary')(class="card-box--button")
+        

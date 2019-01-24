@@ -1,0 +1,24 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Комментарий - зарегистрироваться - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Комментарий - зарегистрироваться
+			
+			.section-ui
+				include ../../sections/comments-unregistered.pug
+			pre.
+				include ../../sections/comments-unregistered.pug
+			
+			p.
+				Количество выходов в родительскую директорию может отличаться, в зависимости от вложенности
+				страницы
+			.title sections/comments-unregistered.pug
+			pre.
+				.comments-unregistered
+					p.comments-unregistered__note.
+						#{"#[+link('Войдите', '#!')]"} или #{"#[+link('Зарегистрируйтесь', '#!')]"} чтобы оставить комментарий

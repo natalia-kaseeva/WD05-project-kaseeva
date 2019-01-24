@@ -1,0 +1,42 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Вход - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+        .title-1 Страница Вход
+        .section-ui
+            +link("Страница вход", '../login.html')(target="_blank")
+        .title-2 pages/login.pug
+        pre.
+            .autorization.autorization--vertical-position
+                .autorization-head
+                    .autorization-head-logo
+                        span.mr-20
+                            i(class='far fa-paper-plane mr-0')
+                        span супер сайт
+                    .autorization-head-link
+                        +link('Регистрация', 'registration.html')
+                .container
+                    .row
+                        .col-12.flex--center
+                            .autorization-content
+                                h1.autorization-content__title.mb-40 Вход на сайт
+                                form.autorization-content-form(action='#!')
+                                    +notification('Введите email', 'error')
+                                    +input(email','email','E-mail')(id="input-email" class='mb-10 mt-20')
+                                    +input('password','password','Пароль')(id='input-password' class='mb-25')
+                                    .autorization-content-form-help.mb-30
+                                        +checkbox('Запомнить меня', 'checked')
+                                        +link('Забыл пароль', '#!')
+                                    .autorization-content-form-button
+                                        +buttonSubmit('Войти', 'enter-button', 'enter')
+                .container
+                    .row
+                        .col-12
+                            .autorization-footer.pb-30
+                                p.mb-15 © Юрий Ключевский
+                                p Создано с #{"#[i(class='mr-0 fas fa-heart')]"} в #{"#[a.strong(href='http://webcademy.ru' target='_blank') WebCademy.ru]"} в 2018 году

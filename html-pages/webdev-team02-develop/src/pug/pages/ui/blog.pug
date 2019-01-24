@@ -1,0 +1,49 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Блог - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Блог
+			.section-ui
+				include ../blog.pug
+			.title pages/blog.pug
+			pre.
+				extends ../layouts/page-layout/page.pug
+
+				block variables
+					- var title = 'Блог';
+					- var pageClass = 'content-page';
+
+				block content
+					include ../sections/header-admin.pug
+					include ../sections/header-guest.pug
+					.container.pb-120.pt-80.pl-0.pr-0
+						.blog-title.mb-40
+							h1.title-general.mb-0.mt-0.blog-title--color Блог веб-разработчика
+							+button('Добавить пост', '#!', 'edit')
+						.row.ml-0.mr-0.mb-50
+							.col-auto.pl-0.pr-0.mr-30
+								+cardBlog('../img/blog/new-york.jpg', 'Поездка в New York', '#!')
+							.col-auto.pl-0.pr-0.mr-30
+								+cardBlog('../img/blog/valley.jpg', 'Что я делал в долине', '#!')
+							.col-auto.pr-0.pl-0
+								+cardBlog('../img/blog/summer.jpg', 'Как я ходил в поход этим летом', '#!')
+						.row.ml-0.mr-0.mb-50
+							.col-auto.pl-0.pr-0.mr-30
+								+cardBlog('../img/blog/ui-blog-preview.jpg', 'Поездка в New York пример длинного названия поста...', '#!')
+							.col-auto.pl-0.pr-0.mr-30
+								+cardBlog('../img/blog/valley.jpg', 'Что я делал в долине', '#!')
+							.col-auto.pr-0.pl-0
+								+cardBlog('../img/blog/summer2.jpg', 'Как я ходил в поход этим летом', '#!')
+						.row.ml-0.mr-0
+							.col-auto.pl-0.pr-0.mr-30
+								+cardBlog('../img/blog/new-york.jpg', 'Поездка в New York', '#!')
+							.col-auto.pl-0.pr-0.mr-30
+								+cardBlog('../img/blog/valley.jpg', 'Что я делал в долине', '#!')
+							.col-auto.pr-0.pl-0
+								+cardBlog('../img/blog/summer.jpg', 'Как я ходил в поход этим летом', '#!')
+					include ../sections/footer.pug

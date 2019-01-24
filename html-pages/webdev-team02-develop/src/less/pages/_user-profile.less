@@ -1,0 +1,82 @@
+.content--padding {
+    padding-top: 80px;
+    padding-bottom: 120px;
+}
+
+.user-profile-block {
+    position: relative;
+}
+
+.user-profile__button {
+    position: absolute;
+    right: -110px;
+    top: 0;
+}
+
+.user-profile-information {
+    display: flex;
+}
+
+.title-2--color {
+    color: @textContent;
+}
+
+.user-profile__description {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin: 10px 0 0;
+    }
+
+    span {
+        color: @postDate;
+        font-weight: 700;
+        font-size: 14px;
+        margin-top: 20px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.user-profile-comments {
+    .user-comment {
+        padding: 15px 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.user-comment-profile {
+    a {
+        text-decoration: none;
+
+        :hover {
+            color: @blueHover;
+        }
+    }
+}
+
+.user-comment__article-title {
+    font-size: 16px;
+    color: @blue;
+}
+
+.user-comment__text-profile {
+    color: @mainText;
+    margin-top: 10px;
+    line-height: 1.5;
+
+    p {
+        margin: 0;
+    }
+}
+
+.icon--mr {
+    margin-right: 10px !important;
+}

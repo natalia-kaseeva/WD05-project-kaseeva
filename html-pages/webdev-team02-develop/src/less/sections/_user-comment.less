@@ -1,0 +1,49 @@
+.user-comments-wrapper .title-2 {
+	margin-top: 0;
+	margin-bottom: 0.769em;
+}
+
+.user-comment {
+	display: flex;
+	background: #eef0f2;
+	padding: 1.25em;
+	margin-bottom: 10px;
+	.rounded(6px);
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.user-comment__avatar {
+	align-self: flex-start;
+}
+
+.user-comment-info-wrapper {
+	margin-left: 20px;
+}
+
+.user-comment__name {
+	font-weight: 700;
+	margin-right: 15px;
+}
+
+.user-comment__date {
+	color: #9b9b9b;
+	font-size: 0.875em;
+	font-weight: 600;
+	
+	.fa-clock {
+		font-size: 1em;
+		margin-right: 10px;
+	}
+}
+
+.user-comment__text {
+	color: @mainText;
+	line-height: 1.5;
+	margin-top: 10px;
+	
+	p {
+		margin: 0;
+	}
+}

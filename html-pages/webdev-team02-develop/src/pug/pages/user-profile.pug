@@ -1,0 +1,43 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+    - var title = 'Профиль пользователя';
+    - var pageClass = 'content-page';
+
+block content
+    .sticky-footer-wrapper
+        include ../sections/header-user.pug
+        .sticky-footer-content
+            .container.content--padding
+                .row
+                    .col-10.offset-1
+                        .user-profile-block
+                            h1.title-general.mt-0.mb-0 Профиль
+                            .user-profile__button
+                                +button('Редактировать', 'user-profil-edit.html', 'edit')
+                                
+                        .user-profile-information.mb-35.mt-40
+                            .user-profile__avatar
+                                +avatar('avatar.jpg', 'alt text avatar')
+                            .user-profile__description
+                                +profileDescription ('Имя и фамилия', 'Емельян Казаков')
+                                +profileDescription ('Email', 'pilat@mail.ru')
+                                +profileDescription ('Страна, Город', 'Россия, Казань')
+                                
+                        h2.title-2.title-2--color.mt-0.mb-25 Комментарии пользователя
+                        
+                        .user-profile-comments
+                            +profileComment('Поездка в LA', '05 Мая 2017 года в 15:45')
+                                p.
+                                    Замечательный парк, обязательно отправлюсь туда этим летом. 
+                        
+                            +profileComment('Ноутбук для веб-разработчика', '15 Мая 2017 года в 10:02')
+                                p.
+                                    Замечательный парк, обязательно отправлюсь туда этим летом.
+                                
+                            +profileComment('Настройка Sublime', '12 Мая 2017 года в 20:39')
+                                p.
+                                    Замечательный парк, обязательно отправлюсь туда этим летом.
+
+
+        include ../sections/footer.pug

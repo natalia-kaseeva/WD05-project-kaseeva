@@ -1,0 +1,33 @@
+.form__checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #1e6791;
+    border-radius:  2px;
+    background-image: url("../img/form/check.png");
+	background-repeat: no-repeat;
+	background-position: center -10px;
+    transition: 0.1s ease-out;
+	vertical-align: text-bottom;
+    margin-right: 10px;
+    outline: none;
+}
+
+.form__input-checkbox:checked + .form__checkbox {
+	background-position: center;
+}
+
+.form__input-checkbox {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.form__label-checkbox {
+    color: inherit;
+    cursor: pointer;
+    margin-right: 20px;
+}

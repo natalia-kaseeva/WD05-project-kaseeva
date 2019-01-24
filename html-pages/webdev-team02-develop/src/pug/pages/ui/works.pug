@@ -1,0 +1,57 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Работы страница - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Работы страница
+			.section-ui
+				include ../works.pug
+
+			pre.
+				include ../works.pug	
+			
+			.title pages/works.pug
+			pre.
+				extends ../layouts/page-layout/page.pug
+
+				block variables
+					- var title = 'Работы';
+					- var pageClass = 'content-page';
+
+				block content
+					include ../sections/header-admin.pug
+					include ../sections/header-guest.pug
+					.container.pb-120.pt-80.pl-0.pr-0
+						.works-title.mb-35
+							.works-title-left
+								h1.works-title-text
+									span.works-title-text--bold Работы
+									|, которые сделал я и моя команда
+							.works-title-right
+								+button('Добавить работу', '#!', 'edit')
+						.row.ml-0.mr-0.mb-50
+							.col-auto.pl-0.pr-0.mr-30
+								+cardPortfolio('../img/blog/ui-portfolio-preview.jpg', 'Верстка Landing Page', '#!')
+							.col-auto.pl-0.pr-0.mr-30
+								+cardPortfolio('../img/blog/works-UI-Kit.jpg', 'Верстка UI набора', '#!')
+							.col-auto.pr-0.pl-0
+								+cardPortfolio('../img/blog/works-shop.jpg', 'Верстка интернет магазина', '#!')
+						.row.ml-0.mr-0.mb-50
+							.col-auto.pl-0.pr-0.mr-30
+								+cardPortfolio('../img/blog/ui-portfolio-preview.jpg', 'Верстка Landing Page', '#!')
+							.col-auto.pl-0.pr-0.mr-30
+								+cardPortfolio('../img/blog/works-UI-Kit.jpg', 'Верстка UI набора', '#!')
+							.col-auto.pr-0.pl-0
+								+cardPortfolio('../img/blog/works-shop.jpg', 'Верстка интернет магазина', '#!')
+						.row.ml-0.mr-0
+							.col-auto.pl-0.pr-0.mr-30
+								+cardPortfolio('../img/blog/ui-portfolio-preview.jpg', 'Верстка Landing Page', '#!')
+							.col-auto.pl-0.pr-0.mr-30
+								+cardPortfolio('../img/blog/works-UI-Kit.jpg', 'Верстка UI набора', '#!')
+							.col-auto.pr-0.pl-0
+								+cardPortfolio('../img/blog/works-shop.jpg', 'Верстка интернет магазина', '#!')
+					include ../sections/footer.pug

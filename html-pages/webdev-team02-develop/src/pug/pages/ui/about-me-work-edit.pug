@@ -1,0 +1,54 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Редактировать - Опыт работы - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Редактировать - Опыт работы
+			
+			.section-ui
+				include ../about-me-work-edit.pug
+			
+			.title pages/about-me-work-edit.pug
+			pre.
+				.content-exp-page
+					.container
+						.row.justify-content-center
+							.col-md-10
+								h1.title-general.mt-0.mb-35 Редактировать - Опыт работы
+								+previousJob(
+									'Февраль 2017 - по настоящее время',
+									'Frontend разработчик, Вконтактe, mail.ru group'
+								)
+									p.about-me-job__text.
+										Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+								+previousJob(
+									'Февраль 2017 - по настоящее время',
+									'Frontend разработчик, Вконтактe, mail.ru group'
+								)
+									p.about-me-job__text.
+										Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+								h3.title-3.mt-0.mb-35 Добавить новое место
+								.about-me-edit-form
+									+input('date','text','Введите даты начала и окончания работы', 'Период', 'work-date')
+									+input('job-name','text','Введите название должности','Название должности','name-post')
+									+textarea('description','Напишите интересное краткое содержательное описание','Описание работы, должностные обязанности, достигнутые результаты',"description-text")
+									+buttonSubmit('Добавить', 'save-button', 'save')
+			p.
+				Миксин принимает 2 параметра: date - дата работы на данной должности (с какой и по какую дату)
+				, title - название должности. Описание должности указывать как вложенный элемент в миксин.
+			.title mixins/about-me.pug
+			pre.
+				mixin previousJob(date, title)
+					.message-user.mb-20
+						+button('Удалить', '#!', 'smallDelete', 'smallDelete')(class="float-right")
+						.message-user__date.mb-20 #{'#{date}'}
+						.message-user-info
+							h4.title-4.mt-0.mb-0 #{'#{title}'}
+						if block
+							block
+						else
+							p.about-me-job__text Отсутствует описание должностных обязанностей

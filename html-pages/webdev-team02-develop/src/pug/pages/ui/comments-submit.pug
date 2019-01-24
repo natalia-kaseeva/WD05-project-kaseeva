@@ -1,0 +1,29 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Комментарий - форма отправки - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Комментарий - форма отправки
+			
+			.section-ui
+				include ../../sections/comments-submit.pug
+			pre.
+				include ../../sections/comments-submit.pug
+			
+			p.
+				Количество выходов в родительскую директорию может отличаться, в зависимости от вложенности
+				страницы
+			.title sections/comments-submit.pug
+			pre.
+				h2.title-2.m-0.mb-15 Оставить комментарий
+				.comments-submit
+					+avatar('avatar.jpg', 'alt text avatar', 'small')
+					.comments-form
+						b.comments__author Юрий Ключевский
+						+notification('Комментарий не может быть пустым', 'error')
+						+textarea('comment-user','Присоединиться к обсуждению...')
+						+buttonSubmit('Опубликовать', 'infoButton')(class="mt-10")

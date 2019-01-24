@@ -1,0 +1,73 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Редактировать - Технологии - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Редактировать - Опыт работы
+			
+			.section-ui
+				include ../about-me-tech-edit.pug
+
+			pre.
+				include ../about-me-tech-edit.pug
+			
+			.title pages/about-me-tech-edit.pug
+			pre.
+				.content-exp-page
+					.container
+						.row
+							.col-md-9.offset-md-1
+								h1.title-general.mt-0.mb-35 Редактировать - Технологии
+								form
+									.row.mb-40
+										.col-3
+											.about-me-tech__input
+												+input('html5','number','0','HTML5','technology-html')(min='0' max='100')
+												p.percent %
+										.col-3
+											.about-me-tech__input
+												+input('css3','number','0','CSS3','technology-css')(min='0' max='100')
+												p.percent %
+										.col-3
+											.about-me-tech__input
+												+input('js','number','0','JS','technology-js')(min='0' max='100')
+												p.percent %
+										.col-3
+											.about-me-tech__input
+												+input('jquery','number','0','jQuery','technology-jquery')(min='0' max='100')
+												p.percent %
+									.row.mb-40
+										.col-3
+											.about-me-tech__input
+												+input('php','number','0','PHP','technology-php')(min='0' max='100')
+												p.percent %
+										.col-3
+											.about-me-tech__input
+												+input('mysql','number','0','MySql','technology-mysql')(min='0' max='100')
+												p.percent %
+									.row.mb-30
+										.col-3
+											.about-me-tech__input
+												+input('git','number','0','Git','technology-git')(min='0' max='100')
+												p.percent %
+										.col-3
+											.about-me-tech__input
+												+input('gulp','number','0','Gulp','technology-gulp')(min='0' max='100')
+												p.percent %
+										.col-3
+											.about-me-tech__input
+												+input('bower','number','0','Bower','technology-bower')(min='0' max='100')
+												p.percent %
+										.col-3
+											.about-me-tech__input
+												+input('webpack','number','0','WebPack','technology-webpack')(min='0' max='100')
+												p.percent %
+									.row
+										.col-auto.pr-30
+											+buttonSubmit('Сохранить', 'save-button', 'save')(class="mr-20")(min='0' max='100')
+										.col-auto
+											+buttonSubmit('Отмена', 'cancel-button', 'cancel')

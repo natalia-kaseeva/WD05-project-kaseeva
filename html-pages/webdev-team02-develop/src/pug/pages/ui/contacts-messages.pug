@@ -1,0 +1,31 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Контакты - Сообщения - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+            .title-1 Страница Контакты - Сообщения
+
+            .section-ui
+                +link("Страница Контакты - Сообщения >>>", '../contacts-messages.html')(target="_blank")
+                    
+            pre.
+                pages/contacts-messages.pug
+            .title pages/contacts-messages.pug
+            pre.
+                .sticky-footer-wrapper
+                    include ../sections/header-admin.pug
+                    include ../sections/header-user.pug
+                    .sticky-footer-content
+                        .container.content--padding
+                            .row
+                                .col-10.offset-1
+                                    h1.title-general.contacts-messages-title--color.mt-0.mb-0 Сообщения от посетителей
+                                    .user-from-messages.mt-30.mb-20
+                                        include ../sections/message-user.pug
+                                    .user-from-messages
+                                        include ../sections/message-user.pug
+                    include ../sections/footer.pug

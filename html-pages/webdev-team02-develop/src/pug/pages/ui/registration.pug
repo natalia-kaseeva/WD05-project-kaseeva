@@ -1,0 +1,43 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Регистрация - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+        .title-1 Страница регистрация
+        .section-ui
+            +link("Страница регистрация", '../registration.html')(target="_blank")
+        .title-2 pages/registration.pug
+        pre.
+            .autorization.autorization--vertical-position
+                .autorization-head
+                    .autorization-head-logo
+                        span.mr-20
+                            i(class='far fa-paper-plane mr-0')
+                        span супер сайт
+                    .autorization-head-link
+                        +link('Вход', 'login.html')
+                .container
+                    .row
+                        .col-12.flex--center
+                            .autorization-content
+                                h1.autorization-content__title.mb-40 Регистрация
+                                form.autorization-content-form(action='#!')
+                                    +notification('Данный email уже занят', 'error')
+                                        p.
+                                            Используйте другой email чтобы создать новый аккаунт.
+                                        p.
+                                            Или воспользуйтесь #{"#[a(href='#!') восстановлением пароля]"}, чтобы войти на сайт.
+                                    +input('email','email','E-mail')(id='input-reg-email' class='mb-10 mt-20')
+                                    +input('password','password','Пароль')(id='input-reg-password' class='mb-30')
+                                    .autorization-content-form-button
+                                        +buttonSubmit('Регистрация', 'enter-button', 'enter')
+                .container
+                    .row
+                        .col-12
+                            .autorization-footer.pb-30
+                                p.mb-15 © Юрий Ключевский
+                                p Создано с #{"#[i(class='mr-0 fas fa-heart')]"} в #{"#[a.strong(href='http://webcademy.ru' target='_blank') WebCademy.ru]"} в 2018 году

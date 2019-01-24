@@ -1,0 +1,5 @@
+mixin indicator(text,color,value)
+	.indicator
+		svg(class="svg-box")
+			circle.circle(class="circle--"+color+" val-"+value)
+		.indicator__text #{text}

@@ -1,0 +1,56 @@
+@LineHeightMin: 1.2;
+
+.message-user {
+  border-radius: 6px;
+  background-color: rgb(246, 247, 248);
+  padding: 20px 20px 25px 20px;
+}
+.message-user__date {
+  font-family: @baseFont;
+  color: rgba(0, 0, 0, 0.502);
+  line-height: 1;
+}
+
+.message-user-title{
+  margin: 0 !important;
+  margin-bottom: 30px !important;
+  font-weight: 700 !important;
+}
+
+.message-user-info {
+  line-height: @LineHeightMin;
+  max-width: 85%;
+  word-break: break-word;
+}
+
+.message-user-info__name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.message-info-files {
+  color: @textColor;
+}
+.message-user-info__email {
+  color: @blue;
+  line-height: 1;
+  text-decoration: none;
+  display: inline;
+    &:hover {
+      color: @blueHover
+    }
+}
+   
+.message-user-info-files__link {
+  text-decoration: underline;
+  font-weight: 400;
+    &:hover {
+      color: @blueHover
+    }
+}
+.message-user__text {
+  margin: 20px 0 25px 0 !important;
+  line-height: 1.5 !important;
+}
+
+
+

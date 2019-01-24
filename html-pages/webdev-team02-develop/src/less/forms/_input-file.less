@@ -1,0 +1,50 @@
+@borderGray: #999;
+@lightGray:#b1bfc7;
+@bluefileHover: #1e6791;
+@bluefileActive: #004c79;
+@textFileSelect: #8e9ba2;
+
+.input-file {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-file-mark {
+    .transition;
+    display: inline-block;
+    background-color: @lightGray;
+    color: @white;
+    border: 1px solid @borderGray;
+    font-family: @baseFont;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+    padding: 13px 9.19px;
+    cursor: pointer;
+}
+
+.input-file-mark--rounded {
+    padding: 13px 19.19px;
+    border-radius: 20px;
+}
+
+.input-file:focus + .input-file-mark,
+.input-file + .input-file-mark:hover {
+    background-color: @bluefileHover;
+}
+
+.input-file + .input-file-mark:active {
+    background-color: @bluefileActive;
+}
+
+.input-file-mark + span {
+	color: @textFileSelect;
+	vertical-align: top;
+	margin: 14px 0 0 14px;
+	display: inline-block;
+	font-weight: 400;
+}

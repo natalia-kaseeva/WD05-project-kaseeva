@@ -1,0 +1,31 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Профиль пользователя - редактировать';
+	- var pageClass = 'content-page';
+
+block content
+	include ../sections/header-user.pug
+	.container.pb-120.pt-80.pl-0.pr-0
+		.row
+			.col-10.offset-1
+				h1.title-general.mt-0.mb-0 Редактировать профиль
+				form(action="#!").mt-35
+					.user-edit-wrapper
+						.user-edit-name
+							+input('profile-edit-name','text','Введите имя','Имя','userEditName')
+						.user-edit-lastname.mt-30
+							+input('profile-edit-last-name','text','Введите фамилию','Фамилия','userEditLastname')
+						.user-edit-email.mt-30
+							+input('profile-edit-email','email','Введите email','Email','userEditEmail')
+					.user-edit-foto.mt-30
+						+upload-file-no-img("Фотография", "Изображение jpg или png, рекомендуемый размер 100x100 пикселей, и весом до 2Мб.")
+					.user-edit-wrapper.mt-30
+						.user-edit-land
+							+input('profile-edit-country','text','Введите страну','Страна','userEditLand')
+						.user-edit-city.mt-30
+							+input('profile-edit-city','text','Введите город','Город','userEditCity')
+						.user-edit-buttons.mt-30
+							+buttonSubmit('Сохранить', 'save-button-profile-edit', 'save')
+							+buttonSubmit('Отмена', 'cancel-profile-edit')
+	include ../sections/footer.pug

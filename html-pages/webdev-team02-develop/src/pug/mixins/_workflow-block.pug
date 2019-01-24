@@ -1,0 +1,8 @@
+mixin workflowBlock(period, title)
+    .workflow-block&attributes(attributes)
+        .workflow-block__date.mb-15
+            span #{period}
+        .workflow-info
+            h4.title-4.mb-15.mt-0 #{title}
+            if block
+                block

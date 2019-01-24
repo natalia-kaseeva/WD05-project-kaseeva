@@ -1,0 +1,10 @@
+mixin previousJob(date, title)
+	.message-user.mb-20
+		+button('Удалить', '#!', 'smallDelete', 'smallDelete')(class="float-right")
+		.message-user__date.mb-20 #{date}
+		.message-user-info
+			h4.title-4.mt-0.mb-0 #{title}
+		if block
+			block
+		else
+			p.about-me-job__text Отсутствует описание должностных обязанностей

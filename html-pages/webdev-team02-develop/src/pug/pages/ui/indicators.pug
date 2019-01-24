@@ -1,0 +1,48 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Индикаторы SVG - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Индикаторы SVG
+			
+			.section-ui
+				include ../../sections/indicator-section.pug
+			pre.
+				include ../../sections/indicator-section.pug
+			
+			p.
+				Количество выходов в родительскую директорию может отличаться в зависимости от вложенности
+				страницы
+
+			.title sections/indicator-section.pug
+			pre.
+				.container-indicators
+					.row.ml-90.pt-40
+						+indicator('HTML5','green','90')
+						+indicator('CSS3','green','90')
+						+indicator('js','green','90')
+						+indicator('jQuery','green','90')
+					.row.ml-90.pt-40
+						+indicator('PHP','blue','90')
+						+indicator('MySql','blue','90')
+					.row.ml-90.pt-40
+						+indicator('Git','yellow','90')
+						+indicator('Gulp','yellow','90')
+						+indicator('Bower','yellow','90')
+						+indicator('WebPack','yellow','90')
+
+			.title mixins/_indicator.pug
+			pre.
+				mixin indicator(text,color,value)
+					.indicator
+						svg(class="svg-box")
+							circle.circle(class="circle--"+color+" val-"+value)
+						.indicator__text #{'#{text}'}
+			
+			p Параметры: 
+			p Параметр 'color' определяет цвет окружности; возможные значения: green, blue, yellow
+			p Параметр 'value' определяет длину цветной части окружности  в процентах; возможные значения:0, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100

@@ -1,0 +1,8 @@
+mixin upload-file-no-img(title, description, round)
+    section.upload-file
+        h6.upload-file__title #{title}
+        p.upload-file__description #{description}
+        if round
+            +file('Выбрать файл','Файл не выбран','upload-file','upload-file', false)(class="input-file-mark--rounded")
+        else 
+            +file('Выбрать файл','Файл не выбран','upload-file','upload-file', false)

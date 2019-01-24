@@ -1,0 +1,31 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Блог - добавить пост';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35.pb-40
+			h1 Блог - добавить пост
+
+			.section-ui
+				include ../add-post.pug
+			
+			.title pages/add-post.pug
+			pre.
+				.container.pl-0.pr-0.pt-80.pb-120
+					.row.m-0
+						.col-10.offset-1.p-0
+							.add-post-content
+								h1.title-general.mt-0.mb-0 Добавить пост
+								form(action="#!")
+									.add-post-content__name.mt-40
+										+input('post-name','text','Введите имя','Поле для ввода','add-post-name')
+									.add-post-content__img.mt-30
+										+upload-file-no-img('Изображение', 'изображение и параметры 945px и больше, высота от 400px')
+									.add-post-content__main.mt-30
+										+textarea('post-city','Введите город','Содержание','add-post-city')
+									.add-post-content__submit.mt-30
+										+buttonSubmit('Сохранить', 'save-button-add-post', 'save')(class="mr-20")
+										+buttonSubmit('Отмена', 'cancel-add-post')
