@@ -4,7 +4,7 @@
 require "config.php";
 require "db.php";
 //require ROOT . "libs/functions.php";
-//session_start();
+session_start();
 
 /* ..........................................
 

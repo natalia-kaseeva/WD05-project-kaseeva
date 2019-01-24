@@ -29,12 +29,13 @@ if ( isset($_POST['enter-button'])) {
 			$user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 			R::store($user);
 
-			/*$_SESSION['logged_user'] = $user;
+			$_SESSION['logged_user'] = $user;
 			$_SESSION['login'] = "1";
 			$_SESSION['role'] = $user->role;
 
-			header('Location: ' . HOST . "profile-edit");
-			exit();*/
+			//header('Location: ' . HOST . "profile-edit");
+			header('Location: ' . HOST);
+			exit();
 
 		}
 

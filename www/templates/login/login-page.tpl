@@ -20,7 +20,14 @@
 	<div class="autorization autorization--vertical-position">
 		<div class="autorization-head">
 			<div class="autorization-head-logo"><span class="mr-20"><i class="far fa-paper-plane mr-0"></i></span><span>супер сайт</span></div>
-			<div class="autorization-head-link"><a class="link" href="login.html">Вход</a></div>
+			<div class="autorization-head-link">
+
+				<?php if ( $uri[0] == 'registration' ) {  ?>
+						<a class="login-page__links" href="<?=HOST?>login">Вход</a>
+					<?php } else { ?>
+						<a class="login-page__links" href="<?=HOST?>registration">Регистрация</a>
+					<?php } ?>
+			</div>
 		</div>
 
 		<?=$content?>
