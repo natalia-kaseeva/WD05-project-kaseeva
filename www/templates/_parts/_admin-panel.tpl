@@ -4,12 +4,12 @@
             <a class="avatar-link" href="<?=HOST?>profile">
                 <div class="avatar avatar--small">
                     <?php if($_SESSION['logged_user']['avatar_small'] != "") { ?>
-                        <img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="<?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['lastname']?>"/>
+                        <img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="<?=$_SESSION['logged_user']['username']?> <?=$_SESSION['logged_user']['lastname']?>"/>
                     <?php } ?>
                 </div>
             </a>
             <div class="brif ml-20">
-                <p class="brif__name"><?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['lastname']?></p><span class="badge">Администратор</span>
+                <p class="brif__name"><?=$_SESSION['logged_user']['username']?> <?=$_SESSION['logged_user']['lastname']?></p><span class="badge">Администратор</span>
             </div>
         </div>
         <nav class="admin-nav ml-70">

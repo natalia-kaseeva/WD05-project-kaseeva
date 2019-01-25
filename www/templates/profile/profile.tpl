@@ -10,13 +10,13 @@
                     <div class="user-profile__avatar">
                         <div class="avatar">
                             <?php if($currentUser->avatar != ''): ?>
-                                <img src="<?=HOST?>usercontent/avatar/<?=$currentUser->avatar?>" alt="<?=$currentUser->name?> <?=$currentUser->lastname?>"/>
+                                <img src="<?=HOST?>usercontent/avatar/<?=$currentUser->avatar?>" alt="<?=$currentUser->username?> <?=$currentUser->lastname?>"/>
                             <?php endif ?>
                         </div>
                     </div>
                     <div class="user-profile__description">
                         <span>Имя и фамилия</span>
-                        <p><?=$currentUser->name?> <?=$currentUser->lastname?></p>
+                        <p><?=$currentUser->username?> <?=$currentUser->lastname?></p>
                         <span>Email</span>
                         <p><?=$currentUser->email?></p>
                         <span>Страна, Город</span>

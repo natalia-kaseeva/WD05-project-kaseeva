@@ -7,7 +7,7 @@
                 <div class="user-edit-wrapper">
                     <div class="user-edit-name">
                         <label class="label" for="userEditName">Имя</label>
-                        <input class="input" name="username" id="userEditName" type="text" placeholder="Введите имя" value="<?=$currentUser['name']?>"/>
+                        <input class="input" name="username" id="userEditName" type="text" placeholder="Введите имя" value="<?=$currentUser['username']?>"/>
                     </div>
                     <div class="user-edit-lastname mt-30">
                         <label class="label" for="userEditLastname">Фамилия</label>
@@ -37,7 +37,8 @@
                     </div>
                     <div class="user-edit-buttons mt-30">
                         <input class="button button-save" type="submit" name="save-profile" value="Сохранить"/>
-                        <input class="button" type="submit" name="cancel-profile-edit" value="Отмена"/>
+                        <a class="button" href="<?=HOST?>profile">Отмена</a>
+                        <!-- <input class="button" type="submit" name="cancel-profile-edit" value="Отмена"/> -->
                     </div>
                 </div>
             </form>

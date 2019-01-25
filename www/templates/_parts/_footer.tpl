@@ -4,7 +4,7 @@
 				<div class="row ml-0 mr-0">
 					<div class="col-5 no-paddings">
 						<div class="footer__copyright">
-							<p>© Иван Пластун</p>
+							<p>© Наталья Касеева</p>
 							<p>Создано с <i class="mr-0 fas fa-heart"></i> в <a class="strong" href="http://webcademy.ru/" target="_blank">WebCademy.ru</a> в 2018 году</p>
 						</div>
 					</div>
