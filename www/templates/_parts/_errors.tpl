@@ -1,8 +1,4 @@
 <?php
-	/*echo "<pre>";
-	print_r($errors);
-	echo "</pre>";*/
-	
     foreach($errors as $error) { ?>
         <?php if(count($error) == 1) { ?>
             <div class="notification">

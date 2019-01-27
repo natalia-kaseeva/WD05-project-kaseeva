@@ -1,5 +1,3 @@
-
-
 <body class="registration">
 	<div class="autorization autorization--vertical-position">
 		<div class="autorization-head">
@@ -20,7 +18,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="autorization-footer pb-30">
-						<p class="mb-15">© Юрий Ключевский</p>
+						<p class="mb-15">©Наталья Касеева</p>
 						<p>Создано с <i class="mr-0 fas fa-heart"></i> в <a class="strong" href="http://webcademy.ru" target="_blank">WebCademy.ru</a> в 2018 году</p>
 					</div>
 				</div>

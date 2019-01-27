@@ -12,6 +12,7 @@ define('HOST', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/')
 define('ROOT', dirname(__FILE__).'/');
 
 $errors = array();
+$success = array();
 
 // SITE SETTINGS FOR EMAILS
 define('SITE_NAME', 'Личный сайт Натальи Касеевой');

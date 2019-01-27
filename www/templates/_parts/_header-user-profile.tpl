@@ -2,7 +2,7 @@
     <div class="user-block__wrapper">
         <div class="row user-group">
             <div class="avatar avatar--small">
-                <?php if($_SESSION['logged_user']['avatar_small'] != ''): ?>
+                <?php if($_SESSION['logged_user']['avatar_small'] != ""): ?>
                     <img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="<?=$_SESSION['logged_user']['username']?> <?=$_SESSION['logged_user']['lastname']?>" />
                 <?php endif?>
             </div>

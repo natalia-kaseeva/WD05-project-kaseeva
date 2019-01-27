@@ -3,7 +3,7 @@
 
 require "config.php";
 require "db.php";
-//require ROOT . "libs/functions.php";
+require ROOT . "libs/functions.php";
 session_start();
 
 /* ..........................................
