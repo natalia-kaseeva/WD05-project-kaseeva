@@ -1,0 +1,8 @@
+mixin avatar(avatar, altText, mode)
+    - altTxt = altText || ''
+    if mode == "small"
+        .avatar(class='avatar--small')
+            img(src="../img/avatars/" + avatar, alt=altTxt)
+    else
+        .avatar
+            img(src="../img/avatars/" + avatar, alt=altTxt)

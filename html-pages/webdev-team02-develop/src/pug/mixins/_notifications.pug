@@ -1,0 +1,30 @@
+mixin notification(title, type)
+	if type == 'success'
+		if block
+			.notification
+				.notification__title.notification--success.notification--with-description #{title}
+				.notification__description
+					block
+		else
+			.notification
+				.notification__title.notification--success #{title}
+
+	else if type == 'error'
+		if block
+			.notification
+				.notification__title.notification--error.notification--with-description #{title}
+				.notification__description
+					block
+		else
+			.notification
+				.notification__title.notification--error #{title}
+				
+	else
+		if block
+			.notification
+				.notification__title.notification--with-description #{title}
+				.notification__description
+					block
+		else
+			.notification
+				.notification__title #{title}

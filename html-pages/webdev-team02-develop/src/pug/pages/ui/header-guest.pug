@@ -1,0 +1,24 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Шапка-гость - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Шапка - гость
+			
+			.section-ui
+				include ../../sections/header-guest.pug
+			pre.
+				include ../../sections/header-guest.pug
+			.title sections/header-guest.pug
+			pre.
+				.header
+				.row.header__wrapper
+					include ./logo.pug
+					.user-block.nav-dawn
+						+buttons-guest('Зарегистрироваться', 'Войти')
+				.row
+					include ./navigation.pug

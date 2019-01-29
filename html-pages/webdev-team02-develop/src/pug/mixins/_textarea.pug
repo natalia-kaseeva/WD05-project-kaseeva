@@ -1,0 +1,7 @@
+mixin textarea(name,placeholder,labelText,id)
+	if labelText && id
+		label.label(for=id) #{labelText}
+		textarea.textarea(name=name id=id placeholder=placeholder)&attributes(attributes) #{areaText}
+	else 
+		textarea.textarea(name=name placeholder=placeholder)&attributes(attributes) #{areaText}
+

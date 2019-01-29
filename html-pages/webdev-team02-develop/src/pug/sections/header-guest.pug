@@ -1,0 +1,9 @@
+header.header
+	.row.header__wrapper
+		include ./logo.pug
+		.user-block.nav-dawn
+			+nav-link('Регистрация', 'registration.html')
+			+nav-link('Вход', 'login.html')
+	.row
+		include ./navigation.pug
+

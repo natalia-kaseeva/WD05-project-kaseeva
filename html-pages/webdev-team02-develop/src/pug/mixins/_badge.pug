@@ -1,0 +1,5 @@
+mixin badge(text,href)
+    if href
+        a.badge(href=href)&attributes(attributes) #{text}
+    else
+        span.badge&attributes(attributes) #{text}

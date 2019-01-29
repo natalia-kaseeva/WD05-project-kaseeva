@@ -1,0 +1,59 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Контакты - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+        .title-1 Контакты
+        .section-ui
+            +link("Контакты", '../contacts.html')(target="_blank")
+        .title-2 pages/contacts.pug
+        pre.
+            include ../sections/header-admin.pug
+            include ../sections/header-user.pug
+            .container.pt-55.pb-80
+                .row
+                    .col-12.clearfix.mb-30
+                        +button('Сообщения', '#!', 'primary')(class="float-right")
+                        +button('Редактировать', '#!', 'edit')(class="float-right mr-20")
+                    .col-5 
+                        h1.title-general.mb-30 Контакты
+                        .row.justify-content-between
+                            .col-auto
+                                .contacts-category.mb-55
+                                    p Email
+                                    p Skype
+                                    p Социальные сети
+                                .contacts-category
+                                    p Телефон
+                                    p Адрес
+                            .col-auto
+                                .link-box.mb-15
+                                    .link-box-info.mb-20
+                                        p
+                                            +link('webdev-ninja@mail.ru', '#!')
+                                        p
+                                            +link('webdev-ninja', '#!')
+                                    .link-box-info
+                                        p
+                                            +link('Профиль Вконтакте', '#!')(class="link--bold")
+                                        p
+                                            +link('Профиль Facebook', '#!')(class="link--bold")
+                                .info
+                                    p +595-456-123
+                                    p Россия, Московская обл. #{'#[br]'} г. Зеленоград
+                    .col-4.offset-1
+                        .title-general.mb-40 Связаться со мной
+                        form.feedback-form(action="#!")
+                            +input('name-user','text','Введите имя')
+                            +input('email-user','email','Email')
+                            +textarea('user-message','Сообщение')(class="mb-20")
+                            +upload-file-no-img("Прикрепить файл", "jpg, png, pdf, doc, весом до 2Мб.", true)
+                            +buttonSubmit('Отправить', 'save-button', 'save')(class="mt-20")
+            .geolocation#map
+            block contactsScript
+                script(src="js/googlemap.js")
+            include ../sections/footer.pug

@@ -1,0 +1,102 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Работы - отдельная работа - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.pt-35.pb-40
+			h1.title-1 Работы - отдельная работа
+
+			.section-ui
+				block content
+
+					include ../works-separate-work.pug
+			
+			.section-ui.mt-20
+				.title-2 pages/works-separate-work.pug
+
+				pre.
+					extends ../layouts/page-layout/page.pug
+
+					block variables
+						- var title = 'Работы - отдельная работа';
+						- var pageClass = 'content-page';
+
+					block content
+						include ../sections/header-admin.pug
+
+					.separate-work-wrapper
+						.separate-work-header-bg.mb-50
+							.logo.ml-50.mb-120
+								.logo__wrapper
+									.logo__img.logo__img--dark.mr-15
+										i(class="far fa-paper-plane mr-0")
+									.logo__title.logo__title--dark Digital Lifestyle
+								.logo__description.logo__description--dark.ml-50 Сайт IT специалиста
+
+							.container
+								.separate-work-head
+									.row.no-gutters.justify-content-between
+										.col-8.offset-1
+											h1.title-general.separate-work-title--size Верстка и frontend Интернет магазина
+										.col-2
+											.separate-work-head__button-edit
+												+button('Редактировать', '#', 'edit')
+
+								.separate-work-info.mt-10
+									.row
+										.col-8.offset-1
+											span.separate-work-info__author.mr-20 Емельян Казаков
+											a.separate-work-info__category.mr-20(href="#") Работы
+											span.separate-work-info__date 25 ноября 2018
+
+								.separate-work-image.mt-55
+									.row
+										.col-10.offset-1
+											.separate-work-image-preview
+												+Img('works/separate-work.jpg', 'Сайт компании')
+
+						.container
+							.separate-work-description-wrapper
+								.row
+									.col-5.offset-1
+
+										.separate-work-description
+											h3.title-3.mt-0.mb-20.strong Кратко о проекте
+											p.
+												Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.
+											.separate-work-description__features Время работы над проектом: 6 недель
+											.separate-work-description__features Страниц сверстано: 52 страницы
+											.separate-work-description__features Бюджет проекта: до 60 000 рублей
+
+										.separate-work-result
+											h3.title-3.mb-20.mt-20.strong Результат
+											p.
+												Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.
+
+									.col-5
+										.separate-work-technologies
+											h3.title-3.mb-20.mt-0.strong Технологии
+											ul.separate-work-technologies__list
+												li.separate-work-technologies__list-item HTML5, CSS3.
+												li.separate-work-technologies__list-item JavaScript, jQuery.
+												li.separate-work-technologies__list-item LESS, PUG, Gulp, npm, bower.
+
+										.separate-work-link-project.mb-35
+											h3.title-3.mb-20.mt-25.strong Ссылка на проект
+											a.separate-work-link-project__link(href="#") http://magnum-store.ru
+
+										.separate-work-link-github
+											h3.title-3.title-3.mb-20.mt-0.strong Код на github
+											a.separate-work-link-github__link(href="#") https://github.com/pozitive/magnumstore/
+
+							.separate-work-pagination-wrapper.mt-45
+								.row
+									.col-10.offset-1
+										.separate-work-pagination
+											+buttonWithIcon('Все работы', '#', 'fa-arrow-left', 'previous', 'left')(class="button-work-pagination-prev")
+											+buttonWithIcon('Следующая работа', '#', 'fa-arrow-right', 'next', 'right')(class="button-work-pagination-next")
+
+						include ../sections/footer.pug

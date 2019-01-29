@@ -1,0 +1,51 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Контакты - редактировать - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Контакты - редактировать
+			
+			.section-ui
+				include ../contacts-edit.pug
+			.title pages/contacts-edit.pug
+			pre.
+				extends ../layouts/page-layout/page.pug
+
+				block variables
+					- var title = 'Контакты - редактировать';
+					- var pageClass = 'content-page';
+
+				block content
+					.sticky-footer-wrapper
+						include ../sections/header-admin.pug
+						include ../sections/header-guest.pug
+						.sticky-footer-content
+							.container.contacts-edit.pl-0.pr-0.pt-80.pb-120
+								.contacts-edit__title
+									h1.title-general.mt-0.mb-0 Редактировать данные
+									form.contacts-edit__form.mt-40
+										.row
+											.col-md-3.mb-30
+												+input('first-name','text','Введите имя','Имя','contactName')(class="mb-30")
+												+input('email','text','Введите email','Email','contactEmail')(class="mb-30")
+												+input('vkontakte','url','Введите ссылку на профиль','Вконтакте','contactVK')(class="mb-30")
+												+input('phone','tel','Введите телефон','Телефон','contactPhone')
+											.col-md-3
+												+input('last-name','text','Введите фамилию','Фамилия','contactLastName')(class="mb-30")
+												+input('skype','text','Введите skype','Skype','contactSkype')(class="mb-30")
+												+input('facebook','url','Введите ссылку на профиль','Facebook','contactFacebook')(class="mb-30")
+												+input('address','text','Введите адрес','Адрес','contactAddress')
+											.col-md-3.position-field
+												.input-box
+													+input('github','url','Введите ссылку на профиль','Github','contactGithub')
+											.col-md-3.position-field
+												.input-box
+													+input('twitter','url','Введите ссылку на профиль','Twitter','contactTW')
+											.col-mb-4
+												+buttonSubmit('Сохранить', 'save-button', 'save')(class="ml-15 mr-20")
+												+buttonSubmit('Отмена', 'infoButton')
+						include ../sections/footer.pug

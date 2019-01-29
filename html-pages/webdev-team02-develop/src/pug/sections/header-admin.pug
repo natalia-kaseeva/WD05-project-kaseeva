@@ -1,0 +1,28 @@
+.header-admin
+	.header-admin__left 			
+		.user.ml-20
+			a.avatar-link(href="#!")
+				+avatar('avatar.jpg', 'alt text avatar', 'small')
+			.brif.ml-20
+				p.brif__name Иван Пластун
+				+badge('Администратор')
+		nav.admin-nav.ml-70
+			a(href="add-post.html")
+				i.fas.fa-plus-circle
+				|Пост
+			a(href="works-add-work.html")
+				i.fas.fa-plus-circle
+				|Работа
+			a(href="about-me.html")
+				i.fas.fa-edit
+				|Обо мне
+			a(href="contacts-edit.html")
+				i.fas.fa-edit
+				|Контакты
+			a(href="contacts-messages.html")
+				i.fas.fa-envelope
+				|Сообщения
+	.header-admin__right
+		a(href="#!")
+			i.fas.fa-sign-out-alt
+			|Выход

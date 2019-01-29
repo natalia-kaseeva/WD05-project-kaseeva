@@ -1,0 +1,76 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+
+	- var title = 'Обо мне - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.section-ui
+		include ../about-me.pug
+	.title pages/about-me.pug
+			pre.
+				include ../sections/header-admin.pug
+				include ../sections/header-user.pug
+				.section-about-info.mt-80.mb-65
+					.container
+						.row.about-info
+							.col-md-3
+								+avatar('avatar.jpg', 'alt text avatar')
+							.col-md-9
+								.about-info
+									+button('Редактировать', '#', 'edit')(class="float-right")
+									p.mb-15.about-info__name Емельян Казаков
+									p.mb-0 Я веб разработчик из Казани. Мне 26 лет.
+									p Занимаюсь разработкой современных сайтов и приложенийю Мне нравится делать интересные и современные проекты. 
+									p Этот сайт я сделал в рамкаобучения в школе онлайн обучения WebCademy. Чуть позже освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
+									h3.title-3.strong.mt-25.mb-15 Что я умею
+									p Меня привлекает Frontend разработка, это не только моя работа, но и хобби. Также знаком и могу решать несложные задачи на Backend. Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.
+				.section-indikators.pt-50
+					.container
+						.row.indikators-block
+							.offset-md-3.col-md-7
+								h2.title-general.mb-10.color-width Технологии
+								p.indikators-block__text.mt-0.mb-0 Которые использую в работе
+							.col-md-2
+								+button('Редактировать', '#', 'edit')
+						.row
+							.col-md-2.list-technology
+								span.list-technology__text Frontend
+								span.list-technology__text Backend
+								span.list-technology__text Workflow
+							.col-md-10
+								include ../sections/indicator-section.pug
+				.sectoin-workflow.pt-80.pb-120
+					.container
+						.row
+							.offset-md-3.col-md-9.experience-work.mb-25
+								h2.title-general.mt-0.mb-0 Опыт работы
+								+button('Редактировать', '#', 'edit')
+						.row
+							.offset-md-3.col-md-9
+								+workflowBlock('февраль 2017 - по настоящее время', 'Frontend разработчик, Вконтакте, mail.ru group')(class="mb-40")
+									p Работы в команде Вконтакте. Работал в команде над обновлением сервиса Музыка, работа над видео разделом. Создание видеолеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+								+workflowBlock('сентябрь 2015 - по январь 2017', 'Разработчик интерфейсов, Яндекс')(class="mb-40")
+									p Работы в проекте ЯндексМузыка. Создание новых разделов сервиса. Оптимизация и создание новых компонентов платформы.
+								+workflowBlock('март 2013 - по август 2015', 'Веб-разработчик, Cloud studio')
+									p Frontend и Backend для клиентских проектов студии. Работа над студийной CMS для интернет магазиновю Участие в разработке CRM системы "Sky CRM". Стек используемых технологий Git, JS, Angular.
+				include ../sections/footer.pug
+	.title-2 Миксин workflow-block
+	.section-ui
+		+workflowBlock('февраль 2017 - по настоящее время', 'Frontend разработчик, Вконтакте, mail.ru group')(class="mb-40")
+			p Работы в команде Вконтакте. Работал в команде над обновлением сервиса Музыка, работа над видео разделом. Создание видеолеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+	pre.
+		+workflowBlock('февраль 2017 - по настоящее время', 'Frontend разработчик, Вконтакте, mail.ru group')(class="mb-40")
+			p Работы в команде Вконтакте. Работал в команде над обновлением сервиса Музыка, работа над видео разделом. Создание видеолеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+	.title-2 mixins/_workflow-block.pug
+	pre.
+		mixin workflowBlock(period, title)
+			.workflow-block&attributes(attributes)
+				.workflow-block__date.mb-15
+					span #{'#{period}'}
+				.workflow-info
+					h4.title-4.mb-15.mt-0 #{'#{title}'}
+					if block
+						block
+

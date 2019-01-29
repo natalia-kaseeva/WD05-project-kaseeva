@@ -1,0 +1,29 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Сообщение от пользователя - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+            .title-1 Сообщение от пользователя
+            
+            .section-ui
+                include ../../sections/message-user.pug
+
+            pre.
+                include ../../sections/message-user.pug
+							
+            .title pug/pages/sections/message-user.pug
+            pre.
+                .message-user
+                    +button('Удалить', '#', 'smallDelete', 'smallDelete')(class="float-right")
+                    .message-user__date.mb-20 22 Августа 2017
+                    .message-user-info
+                        span.message-user-info__name.strong Джон До
+                        a.message-user-info__email.ml-20 johndoe@gmail.com
+                    p.message-user__text Привет, как дела?) наконец то написал тебе. Посмотри ТЗ нового проекта. Делаем стартап в B2B сфере, юриспуриденция, контракты, право. Инвестиции уже получены и нам нужен классный фронтэнд разработчик, как раз - такой как ты. Будет круто если сможешь поработать с нами.
+                    span.message-info-files.strong Прикрепленные файлы:
+                        a.message-user-info-files__link.ml-20 Avrora-platform.pdf
+					

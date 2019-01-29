@@ -1,0 +1,36 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Поле file - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+        .title-1 Поле file
+        .section-ui
+            .title-2 Выбор одного файла
+            +file('Выбрать файл', 'Файл не выбран', 'fileUpload','fileUpload',false)
+        pre.
+            +file('Выбрать файл', 'Файл не выбран', 'fileUpload','fileUpload',false)
+        .section-ui
+            .title-2 Скругленное Поле
+            +file('Выбрать файл', 'Файл не выбран', 'fileUpload-round','fileUpload-round',false)(class="input-file-mark--rounded")
+        pre.
+            +file('Выбрать файл', 'Файл не выбран', 'fileUpload-round','fileUpload-round',false)(class="input-file-mark--rounded")
+        .section-ui
+            .title-2 Выбор нескольких файлов
+            +file('Выбрать файл', 'Файл не выбран','fileUpload-1','fileUpload-1',true)
+        pre.
+            +file('Выбрать файл', 'Файл не выбран','fileUpload-1','fileUpload-1',true)
+        .title-2 mixins/_input-file.pug
+        pre.
+            mixin file(text, textStatus, name, id, multiple)
+                if multiple
+                    input(type="file" name=name class="input-file" id=id data-multiple-caption="{count}" multiple)
+                    label(class="input-file-mark" for=id)&attributes(attributes) #{'#{text}'}
+                    span #{'#{textStatus}'}
+                else
+                    input(type="file" name=name class="input-file" id=id data-multiple-caption="{count}")
+                    label(class="input-file-mark" for=id)&attributes(attributes) #{'#{text}'}
+                    span #{'#{textStatus}'}

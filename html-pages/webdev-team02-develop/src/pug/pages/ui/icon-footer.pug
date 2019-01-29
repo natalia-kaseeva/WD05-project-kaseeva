@@ -1,0 +1,34 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Иконки подвала - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Иконки подвала
+			.section-ui.social.dark-bg.pl-10
+				+icon-font('fab fa-vk')
+				+icon-font('fab fa-twitter')
+				+icon-font('fab fa-youtube')
+				+icon-font('fab fa-instagram')
+				+icon-font('fab fa-facebook-f')
+			pre.
+				+icon-font('fab fa-facebook-f')
+				+icon-font('fab fa-twitter')
+				+icon-font('fab fa-youtube')
+				+icon-font('fab fa-instagram')
+				+icon-font('fab fa-facebook-f')
+			
+			.title mixins/_icons.pug
+			pre.
+				mixin icon-font(name, link)
+					if link
+						a(href= link, target="_blank")
+							span.social-icon
+								i(class= name)
+					else
+						a(href="#!", target="_blank")
+							span.social-icon
+								i(class= name)

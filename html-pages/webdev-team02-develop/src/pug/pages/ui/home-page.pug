@@ -1,0 +1,53 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Главная страница - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.pt-35
+			h1.user-content Главная страница
+			
+			.section-ui
+				include ../main.pug
+			pre.
+				include ../main.pug
+			.title main.pug
+			pre.
+				extends ../layouts/page-layout/page.pug
+				block variables
+					- var title = 'Главная';
+					- var pageClass = 'content-page';
+				block content
+					include ../sections/header-admin.pug
+					include ../sections/header-guest.pug
+					include ../sections/about-me.pug
+					.new-works.container.section
+						.row
+							.col-md-12
+								h1.title-1 Новые 
+									span.title-1--underline работы
+						.row
+							.col-md-4
+								+cardPortfolio('../img/blog/ui-portfolio-preview.jpg', 'Верстка Landing Page', '#')
+							.col-md-4
+								+cardPortfolio('../img/blog/ui-portfolio-preview.jpg', 'Верстка Landing Page', '#')
+							.col-md-4
+								+cardPortfolio('../img/blog/ui-portfolio-preview.jpg', 'Верстка Landing Page', '#')
+					.blog-entries.container.section
+						.row
+							.col-md-12
+								h1.title-1 Новые записи в 
+									span.title-1--underline блоге
+						.row
+							.col-md-4
+								+cardBlog('../img/blog/ui-blog-preview.jpg', 'Поездка в New York пример длинного названия поста...', '#')
+							.col-md-4
+								+cardBlog('../img/blog/ui-blog-preview.jpg', 'Поездка в New York пример длинного названия поста...', '#')
+							.col-md-4
+								+cardBlog('../img/blog/ui-blog-preview.jpg', 'Поездка в New York пример длинного названия поста...', '#')
+					include ../sections/footer.pug
+
+
+

@@ -1,0 +1,103 @@
+.autorization {
+    background: url(/img/img-loginPage/layout-2.png),
+    url(/img/img-loginPage/layout-1.png),
+    url(/img/img-loginPage/background.jpg);
+    background-size: auto, auto, cover;
+    background-position: left top, left bottom, left top;
+    background-repeat: repeat-x, repeat-x, no-repeat;
+    height: 100vh;
+}
+
+.autorization--vertical-position {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex--center {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.autorization-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 50px 0 50px;
+}
+
+.autorization-head-logo {
+    font-family: @baseFont;
+    color: @white;
+    text-transform: capitalize;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.autorization-head-link a{
+    font-family: @baseFont;
+    color:  #fefefe;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.autorization-content {
+    background-color:  rgba(18, 45, 61, 0.6);
+    box-shadow: 5px 9px 40px 0px #63758a;
+    border-radius: 10px;
+    width: 360px;
+    padding: 40px 30px
+}
+
+.autorization-content__title {
+    font-family: @baseFont;
+    color: @white;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.autorization-content-form-help {
+    color:  #ffffff;
+
+    a {
+        font-family:@baseFont;
+        color:  #fefefe;
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.autorization-content-form-button {
+    text-align: center;
+}
+
+.autorization-footer {
+    font-family: @baseFont;
+    color: @white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+
+    p {margin: 0;}
+
+    a {
+        color:  #ffffff;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

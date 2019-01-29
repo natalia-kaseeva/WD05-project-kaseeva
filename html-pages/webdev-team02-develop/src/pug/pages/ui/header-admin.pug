@@ -1,0 +1,47 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Шапка администратора - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard dark-bg';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Шапка администратора
+			.section-ui
+				include ../../sections/header-admin.pug	
+
+
+			pre.
+				include ../../sections/header-admin.pug	
+			
+			.title sections/header-admin.pug
+			pre.
+				.header-admin
+					.header-admin__left 			
+						.user.ml-20
+							a.avatar-link(href="#!")
+								+avatar('avatar.jpg', 'alt text avatar', 'small')
+							.brif.ml-20
+								p.brif__name Юрий Ключевский
+								+badge('Администратор')
+						nav.admin-nav.ml-70
+							a(href="#!")
+								i.fas.fa-plus-circle
+								|Пост
+							a(href="#!")
+								i.fas.fa-plus-circle
+								|Работа
+							a(href="#!")
+								i.fas.fa-edit
+								|Обо мне
+							a(href="#!")
+								i.fas.fa-edit
+								|Контакты
+							a(href="#!")
+								i.fas.fa-envelope
+								|Сообщения
+					.header-admin__right
+						a(href="#!")
+							i.fas.fa-sign-out-alt
+							|Выход

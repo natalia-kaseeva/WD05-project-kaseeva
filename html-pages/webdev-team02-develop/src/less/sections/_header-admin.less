@@ -1,0 +1,114 @@
+@color-admin-name: #383737;
+@color-admin-nav: #222222;
+
+.header-admin {
+	color: #000000;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80px;
+	background-color: #ffffff;
+}
+
+.header-admin__left {
+	display: flex;
+	height: 100%;
+}
+
+.user {
+	display: flex;
+	align-items: center;
+}
+
+.avatar-link {
+	display: block;
+}
+
+.brif {
+	height: 100%;
+
+	& p {
+		margin-bottom: 6px;
+		margin-top: 15px;
+		color: @color-admin-name;
+		line-height: 1;
+	}
+}
+
+.brif__name {
+	font-family: @baseFont;
+	font-size: 16px;
+	font-weight: 800;
+	letter-spacing: 0.32px;
+}
+
+.admin-nav {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.admin-nav a {
+	margin-left: 30px;
+	text-decoration: none;
+	color: @color-admin-nav;
+	font-family: @baseFont;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0.32px;
+	.transition;
+
+	&:hover {
+		color: @blueHover;
+	}
+
+	&:active {
+		color: @blueActive;
+	}
+
+	&:focus {
+		color: @blueActive;
+	}
+
+	&:first-child {
+		margin-left: 0px;
+	}
+}
+
+.svg-inline--fa {
+	margin-right: 8px;
+	font-size: 18px;
+}
+
+.header-admin__right {
+	margin-right: 50px;
+}
+
+.header-admin__right a {
+	color: @color-admin-nav;
+	text-decoration: none;
+	font-family: @baseFont;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0.32px;
+	.transition;
+
+	&:hover {
+		color: @blueHover;
+	}
+
+	&:active {
+		color: @blueActive;
+	}
+
+	&:focus {
+		color: @blueActive;
+	}
+
+	&:first-child {
+		margin-left: 0px;
+	}
+}

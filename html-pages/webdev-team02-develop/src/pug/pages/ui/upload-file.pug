@@ -1,0 +1,44 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Загрузка файла - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+        .title-1 Загрузка файла
+        .section-ui
+            +upload-file-no-img("Фотография", "Изображение jpg или png, размером больше чем 100х100 пикселей, и весом до 2Мб.")
+        .title-2 Использование секции без изображения
+        pre.
+            +upload-file-no-img("Фотография", "Изображение jpg или png, размером больше чем 100х100 пикселей, и весом до 2Мб.")
+        .section-ui
+            +upload-file-no-img("Прикрепить файл", "jpg, png, pdf, doc, весом до 2Мб.", true)
+        pre.
+            +upload-file-no-img("Фотография", "Изображение jpg или png, размером больше чем 100х100 пикселей, и весом до 2Мб.", true)
+        .title-2 mixins/_upload-file-no-img.pug
+        pre.
+            mixin upload-file-no-img(title, description, round)
+                section.upload-file
+                    h6.upload-file__title #{'#{title}'}
+                    p.upload-file__description #{'#{description}'}
+                    if round
+                        +file('Выбрать файл','Файл не выбран','upload-file','upload-file', false)(class="input-file-mark--rounded")
+                    else 
+                        +file('Выбрать файл','Файл не выбран','upload-file','upload-file', false)
+        .section-ui
+            include ../../sections/upload-file-with-img.pug
+        .title-2 Использование секции с изображением
+        pre.
+            include ../../sections/upload-file-with-img.pug
+        .title-2 Код секции с изображением
+        pre.
+            section.upload-file
+                h6.upload-file__title Изображение
+                p.upload-file__description Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.
+                .upload-file-input-file
+                    +file('Выбрать файл','Файл не выбран','upload-file-1','upload-file-1', false)
+                .upload-file-image-box
+                    img(src="../img/imageInputUpload/moutains.jpg", alt="moutains")
+                    +button('Удалить', '#', 'smallDelete', 'smallDelete')(class="upload-file-image-box--button-position")

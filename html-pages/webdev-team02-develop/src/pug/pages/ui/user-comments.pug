@@ -1,0 +1,47 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Комментарии пользователей - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.pt-35.pb-40
+			h1 Комментарии пользователей
+			
+			.section-ui.mt-30
+				include ../../sections/user-comments.pug
+
+			pre.
+				include ../../sections/user-comments.pug
+				
+			.title section/user-comments.pug
+			
+			pre.
+				.user-comments-wrapper.mb-25
+					.title-2 2 комментария
+
+					+user-comment('avatar-2.jpg', 'Джон До собственной персоной', 'Джон До', '01 декабря 2018 года в 15:37')
+						p.
+							Замечательный парк, обязательно отправлюсь туда этим летом.
+
+					+user-comment('avatar-3.jpg', 'Джейн До собственной персоной', 'Джейн До', '02 декабря 2018 года в 19:47')
+						p.
+							Согласна, парк просто потрясающий! Была там в прошлом году и нисколько не пожалела. Обязательно вернусь туда снова в следующем году.
+			.section-ui
+				.title-2 Миксин комментария
+
+				.title mixins/_user-comment.pug
+
+			pre.
+				mixin user-comment(avatar, altText, userName, date)
+					.user-comment
+						.user-comment__avatar
+							+avatar(avatar, altText, 'small')
+						.user-comment-info-wrapper
+							span.user-comment__name #{'#{userName'}}
+							span.user-comment__date
+								#{'i(class="far fa-clock")'}
+								| #{'#{date}'}
+							.user-comment__text
+								block

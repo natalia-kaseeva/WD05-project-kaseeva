@@ -1,0 +1,10 @@
+mixin header-user-block(group, firstName, lastName)
+	.user-block__wrapper
+		.row.user-group
+			+avatar('avatar.jpg', 'alt text avatar', 'small')
+			.user-name
+				span #{firstName} #{lastName}
+				p #{group}
+				.row.user-buttons
+					+button('Профиль', 'user-profile.html', 'profile')
+					+button('Выход', '#', 'profile')

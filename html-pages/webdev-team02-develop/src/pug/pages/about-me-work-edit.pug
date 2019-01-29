@@ -1,0 +1,35 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Редактировать - Опыт работы';
+	- var pageClass = 'content-page';
+
+block content
+	include ../sections/header-admin.pug
+	include ../sections/header-user.pug
+
+	.content-exp-page
+		.container
+			.row.justify-content-center
+				.col-md-10
+					h1.title-general.mt-0.mb-35 Редактировать - Опыт работы
+					+previousJob(
+						'Февраль 2017 - по настоящее время',
+						'Frontend разработчик, Вконтактe, mail.ru group'
+					)
+						p.about-me-job__text.
+							Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+					+previousJob(
+						'Февраль 2017 - по настоящее время',
+						'Frontend разработчик, Вконтактe, mail.ru group'
+					)
+						p.about-me-job__text.
+							Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+					h3.title-3.mt-0.mb-35 Добавить новое место
+					.about-me-edit-form
+						+input('date','text','Введите даты начала и окончания работы', 'Период', 'work-date')
+						+input('job-name','text','Введите название должности','Название должности','name-post')
+						+textarea('description','Напишите интересное краткое содержательное описание','Описание работы, должностные обязанности, достигнутые результаты',"description-text")
+						+buttonSubmit('Добавить', 'save-button', 'save')
+
+	include ../sections/footer.pug

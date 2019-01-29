@@ -1,0 +1,6 @@
+mixin input(name,type,placeholder,labelText,id)
+	if labelText && id
+		label.label(for=id) #{labelText}
+		input.input(name=name id=id type=type placeholder=placeholder)&attributes(attributes)
+	else 
+		input.input(name=name id=id type=type placeholder=placeholder)&attributes(attributes)

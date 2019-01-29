@@ -1,0 +1,9 @@
+mixin file(text, textStatus, name, id, multiple)
+    if multiple
+        input(type="file" name=name class="input-file" id=id data-multiple-caption="{count}" multiple)
+        label(class="input-file-mark" for=id)&attributes(attributes) #{text}
+        span #{textStatus}
+    else
+        input(type="file" name=name class="input-file" id=id data-multiple-caption="{count}")
+        label(class="input-file-mark" for=id)&attributes(attributes) #{text}
+        span #{textStatus}

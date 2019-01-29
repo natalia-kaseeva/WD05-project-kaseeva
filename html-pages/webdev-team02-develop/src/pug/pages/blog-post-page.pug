@@ -1,0 +1,16 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+    - var title = 'Страница поста с блогом';
+    - var pageClass = 'content-page';
+
+block content
+    include ../sections/header-admin.pug
+    include ../sections/header-user.pug
+    .container.pt-80.pb-120
+        .row
+            .col-10.offset-1
+                include ../sections/blog-post.pug
+                include ../sections/user-comments.pug
+                include ../sections/comments-submit.pug
+    include ../sections/footer.pug

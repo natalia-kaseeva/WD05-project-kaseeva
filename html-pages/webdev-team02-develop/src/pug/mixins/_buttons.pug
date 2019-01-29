@@ -1,0 +1,60 @@
+mixin button(text, link, type, size)
+	if type == "edit"
+		a.button(href=link, class="button-edit")&attributes(attributes) #{text}
+	else if type == "smallEdit" && size == "smallEdit"
+		a.button(href=link, class="button-edit button--small-edit")&attributes(attributes) #{text}
+	else if type == "delete"
+		a.button(href=link, class="button-delete")&attributes(attributes) #{text}
+	else if type == "smallDelete" && size == "smallDelete"
+		a.button(href=link, class="button-delete button--small-delete")&attributes(attributes) #{text}
+	else if type == "save"
+		a.button(href=link, class="button-save")&attributes(attributes) #{text}
+	else if type == "smallSave" && size == "smallSave"
+		a.button(href=link, class="button-save button--small-save")&attributes(attributes) #{text}
+	else if type == "enter"
+		a.button(href=link, class="button-enter")&attributes(attributes) #{text}
+	else if type == "smallEnter" && size == "smallEnter"
+		a.button(href=link, class="button-save button--small-enter")&attributes(attributes) #{text}
+	else if type == "profile"
+		a.button(href=link, class="button-profile")&attributes(attributes) #{text}
+	else if type == "primary"
+		a.button(href=link)&attributes(attributes) #{text}
+	else if type == "smallPrimary" && size == "smallPrimary"
+		a.button.button--small-primary(href=link)&attributes(attributes) #{text}
+
+mixin buttonSubmit(text, name, type)
+	if type == "edit"
+		input.button(type="submit", name=name, class="button-edit", value=text)&attributes(attributes)
+	else if type == "delete"
+		input.button(type="submit", name=name, class="button-delete", value=text)&attributes(attributes)
+	else if type == "save"
+		input.button(type="submit", name=name, class="button-save", value=text)&attributes(attributes)
+	else if type == "enter"
+		input.button(type="submit", name=name, class="button-enter", value=text)&attributes(attributes)
+	else if type == "profile"
+		input.button(type="submit", name=name, class="button-profile", value=text)&attributes(attributes)
+	else
+		input.button(type="submit", name=name, value=text)&attributes(attributes)
+
+mixin buttonWithIcon(text, link, icon, type, iconPos)
+	if type == "next" && icon != "" && iconPos == "right"
+		a.button(href=link, class="button-next")&attributes(attributes) #{text} #[span.button__icon #[i(class="mr-0 fas " + icon)]]
+	else if type == "previous" && icon != "" && iconPos == "left"
+		a.button(href=link, class="button-previous")&attributes(attributes) #{text} #[span.button__icon.button__icon--mright.float-left #[i(class="mr-0 fas " + icon)]]
+	else if  type == "edit" && icon != "" && iconPos == "right"
+		a.button(href=link, class="button-edit")&attributes(attributes) #{text} #[span.button__icon #[i(class="mr-0 fas " + icon)]]
+	else if  type == "edit" && icon != "" && iconPos == "left"
+		a.button(href=link, class="button-edit") #{text} #[span.button__icon.button__icon--mright.float-left #[i(class="mr-0 fas " + icon)]]
+	else if  type == "delete" && icon != "" && iconPos == "right"
+		a.button(href=link, class="button-delete")&attributes(attributes) #{text} #[span.button__icon #[i(class="mr-0 fas " + icon)]]
+	else if  type == "delete" && icon != "" && iconPos == "left"
+		a.button(href=link, class="button-delete")&attributes(attributes) #{text} #[span.button__icon.button__icon--mright.float-left #[i(class="mr-0 fas " + icon)]]
+	else if  type == "save" && icon != "" && iconPos == "right"
+		a.button(href=link, class="button-save")&attributes(attributes) #{text} #[span.button__icon #[i(class="mr-0 fas " + icon)]]
+	else if type == "save" && icon != "" && iconPos == "left"
+		a.button(href=link, class="button-save")&attributes(attributes) #{text} #[span.button__icon.button__icon--mright.float-left #[i(class="mr-0 fas " + icon)]]
+	else if type == "enter" && icon != "" && iconPos == "right"
+		a.button(href=link, class="button-enter")&attributes(attributes) #{text} #[span.button__icon #[i(class="mr-0 fas " + icon)]]
+	else if type == "enter" && icon != "" && iconPos == "left"
+		a.button(href=link, class="button-enter")&attributes(attributes) #{text} #[span.button__icon.button__icon--mright.float-left #[i(class="mr-0 fas " + icon)]]
+

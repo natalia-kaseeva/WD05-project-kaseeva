@@ -1,0 +1,40 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Шапка-пользователь - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Шапка - пользователь
+			
+			.section-ui
+				include ../../sections/header-user.pug
+			pre.
+				include ../../sections/header-user.pug
+			.title sections/header-user.pug
+			pre.
+				header.header
+					.row.header__wrapper.header__wrapper--user
+						include ./logo.pug
+						.user-block
+							+header-user-block('Пользователь', 'Иван', 'Пластун')
+					.row
+						include ./navigation.pug
+			.title-2 mixins/_header-user-block.pug
+			.section-ui.dark-bg.pl-50
+				+header-user-block('Пользователь', 'Иван', 'Пластун')
+			pre.
+				+header-user-block('Пользователь', 'Иван', 'Пластун')
+			pre.
+				mixin header-user-block(group, firstName, lastName)
+					.user-block__wrapper
+						.row.user-group
+							+avatar('avatar.jpg', 'alt text avatar', 'small')
+							.user-name
+								span #{'#{firstName}'} #{'#{lastName}'}
+								p #{'#{group}'}
+								.row.user-buttons
+									+button('Профиль', '#', 'profile')
+									+button('Выход', '#', 'profile')

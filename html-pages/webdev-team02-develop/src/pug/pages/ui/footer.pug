@@ -1,0 +1,43 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Подвал сайта - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Подвал сайта
+			.section-ui
+				include ../../sections/footer.pug
+			pre.
+				include ../../sections/footer.pug
+
+			.title sections/footer.pug
+
+			pre.
+				footer.footer
+					.container.pl-0.pr-0
+						.footer__container
+							.row.ml-0.mr-0
+								.col-5.no-paddings
+									.footer__copyright
+										p © Юрий Ключевский
+										p Создано с #[i(class="fas fa-heart")] в #[a(href="http://webcademy.ru/" class = "strong") WebCademy.ru] в 2017 году
+								.col-3.no-paddings
+									nav.footer__nav
+										a(href="#!") Главная
+										a(href="#!") Обо мне
+										a(href="#!") Работы
+										a(href="#!") Блог
+										a(href="#!") Контакты
+								.col-4.no-paddings
+									.social
+										+icon-font('fab fa-vk')
+										+icon-font('fab fa-twitter')
+										+icon-font('fab fa-youtube')
+										+icon-font('fab fa-instagram')
+										+icon-font('fab fa-facebook-f')
+								
+								
+

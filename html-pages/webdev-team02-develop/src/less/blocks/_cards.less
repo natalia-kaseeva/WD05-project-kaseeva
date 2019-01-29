@@ -1,0 +1,60 @@
+@radius: 6px;
+@shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
+@background: #fff;
+
+.card,
+.card-box {
+    border: none;
+    border-radius: @radius;
+    background-color: @background;
+    box-shadow: @shadow;
+    padding: 20px;
+    flex-direction: column;
+    display: flex;
+}
+
+.card-box {
+    width: 360px;
+    height: 308px;
+    justify-content: space-between;    
+}
+
+.card-box--height {
+    height: 315px;
+}
+
+.card > .title-1,
+.card > .title-2,
+.card > .title-3,
+.card > .title-4,
+.card > .title-5,
+.card > .title-6 {
+    margin-top: 0;
+}
+
+.card-box__title {
+    font-size: 22px;
+    font-family: @baseFont;
+    font-weight: 600;
+    color: #222222;
+    line-height: 1.273;
+    text-align: left;
+    word-break: break-word;
+}
+
+.card-box__img-blog {
+    width: 320px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.card-box__img-portfolio {
+    width: 360px;
+    height: 190px;
+    overflow: hidden;
+    margin: -20px -20px 0 -20px;
+}
+
+.card-box--button {
+    align-self: flex-start;
+}

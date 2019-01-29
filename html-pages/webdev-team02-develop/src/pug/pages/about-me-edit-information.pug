@@ -1,0 +1,34 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Обо мне редактировать – Информация';
+	- var pageClass = 'content-page';
+
+block content
+	include ../sections/header-admin.pug
+	include ../sections/header-user.pug
+
+	.about-me-edit
+		.container
+			.row
+				.col-md-10.offset-md-1
+					
+					h1.title-general.edit-title--color.mt-0.mb-35 Редактировать - Обо Мне
+					
+					form#about-me-edit-info.about-me-edit-info-form
+						.edit-name
+							+input('fullName','text','Введите имя и фамилию','Имя, фамилия','editFullName')
+							
+						.upload-photo.mt-30.mb-35
+							+upload-file-no-img("Фотография", "Изображение jpg или png, рекомендуемый размер 205x205 пикселей, и весом до 2Мб.")
+							.upload-photo__result
+								+Img('avatars/avatar.jpg','user-photo')
+						
+						.edit-information
+							+textarea('about-me-info','Напишите информацию о себе','Информация на главной','about-me-edit-info')(class="edit-information__textarea")
+
+						.about-me-edit-buttons
+							+buttonSubmit('Сохранить', 'save-button', 'save')(class="mr-20")
+							+buttonSubmit('Отмена', 'cancellation')
+
+	include ../sections/footer.pug
