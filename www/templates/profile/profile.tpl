@@ -23,9 +23,11 @@
                         <span>Email</span>
                         <p><?=$currentUser->email?></p>
                         <span>Страна, Город</span>
-                        <?php if($currentUser->country != '' && $currentUser->city != ''): ?>
-                            <p><?=$currentUser->country?>, <?=$currentUser->city?></p>
+                        <?php if($currentUser->country != '' && $currentUser->city = ''): ?>
+                         <p><?=$currentUser->country?>,<?=$currentUser->city?></p>
+                        
                         <?php endif ?>
+                       
                     </div>
                 </div>
                 <h2 class="title-2 title-2--color mt-0 mb-25">Комментарии пользователя</h2>

@@ -1,7 +1,7 @@
 <?php
     foreach($errors as $error) { ?>
         <?php if(count($error) == 1) { ?>
-            <div class="notification">
+            <div class="notification"">
                 <div class="notification__title notification--error mb-10"><?=$error['title']?></div>
             </div>
 
