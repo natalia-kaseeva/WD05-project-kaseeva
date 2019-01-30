@@ -9,9 +9,9 @@
                 <div class="user-profile-information mb-35 mt-40">
                     <div class="user-profile__avatar">
                         <div class="avatar">
-                           <!-- <?php if($currentUser->avatar != ''): ?>
+                          <?php if($currentUser->avatar != ''): ?>
                                 <img src="<?=HOST?>usercontent/avatar/<?=$currentUser->avatar?>" alt="<?=$currentUser->username?> <?=$currentUser->lastname?>"/>
-                            <?php endif ?> -->
+                            <?php endif ?>
                             <?php if ( $_SESSION['logged_user']['avatar'] != "") { ?>
                             <img src="<?=HOST?>usercontent/avatar/<?=$currentUser->avatar?>" alt="<?=$currentUser->username?> <?=$currentUser->lastname?>"/>
                             <?php } ?>
@@ -22,10 +22,25 @@
                         <p><?=$currentUser->username?> <?=$currentUser->lastname?></p>
                         <span>Email</span>
                         <p><?=$currentUser->email?></p>
-                        <span>Страна, Город</span>
-                        <?php if($currentUser->country != '' && $currentUser->city != ''): ?>
-                            <p><?=$currentUser->country?>, <?=$currentUser->city?></p>
-                        <?php endif ?>
+                       <span>Страна</span>
+                       <?php ?>
+                           <p><?=$currentUser->country?></p>
+                       <?php  ?>
+                       <span>Город</span>
+                       <?php ?>
+                           <p><?=$currentUser->city?></p>
+                       <?php  ?>
+
+                 <!--        <span>Страна, Город</span>
+                 <?php if($currentUser->country != '' && $currentUser->city != '') { ?>
+                     <p><?=$currentUser->country?>, <?=$currentUser->city?></p> 
+                 <?php } elseif ($currentUser->country != '' && $currentUser->city = '') { ?>
+                     <p><?=$currentUser->country?></p> 
+                 <?php } elseif ($currentUser->country = '' && $currentUser->city != '') { ?>
+                     <p><?=$currentUser->city?></p>
+                 <?php } ?> -->
+                        
+
                     </div>
                 </div>
                 <h2 class="title-2 title-2--color mt-0 mb-25">Комментарии пользователя</h2>

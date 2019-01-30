@@ -1,0 +1,12 @@
+.nav__link--active {
+    text-decoration: none !important;
+}
+
+.col--margin:nth-child(3n) {
+    margin-right: 0;
+} 
+
+.title--width {
+    max-width: 750px;
+   	word-wrap:break-word;
+}

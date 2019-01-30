@@ -5,10 +5,13 @@ $currentUser = $_SESSION['logged_user'];
 $user = R::load('users', $currentUser->id);
 
 if ( isset($_POST['save-profile']) ) {
+	$pattern = '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z{2,4}\.])?[a-z]{2,4}$/i';
 
 	if ( trim($_POST['useremail']) == '') {
 		$errors[] = ['title' => 'Введите Email' ];
-	}
+	} else if (!preg_match($pattern, trim($_POST['useremail']))) {
+			$errors[] = ['title' => 'Неверный формат email'];
+		}
 
 	if ( trim($_POST['username']) == '') {
 		$errors[] = ['title' => 'Введите Имя' ];
