@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 27 2019 г., 17:33
+-- Время создания: Янв 30 2019 г., 21:36
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -44,6 +44,35 @@ INSERT INTO `about` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` text COLLATE utf8mb4_unicode_520_ci,
+  `data_time` datetime DEFAULT NULL,
+  `author_id` int(11) UNSIGNED DEFAULT NULL,
+  `post_img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `text`, `data_time`, `author_id`, `post_img`, `post_img_small`) VALUES
+(14, 'Что я делал в долине', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:01:19', 10, '851876831.jpg', '320-851876831.jpg'),
+(15, 'Как я ходил в поход этим летом', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:04:11', 10, '195608520.jpg', '320-195608520.jpg'),
+(16, 'Поездка в New York пример длинного названия поста', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:05:17', 10, '170202636.jpg', '320-170202636.jpg'),
+(17, 'Поездка в New York пример длинного названия поста', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:05:30', 10, '171026611.jpg', '320-171026611.jpg'),
+(18, 'Что я делал в долине', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:06:16', 10, '840341186.jpg', '320-840341186.jpg'),
+(19, 'Как я ходил в поход этим летом', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:06:47', 10, '497402954.jpg', '320-497402954.jpg'),
+(20, 'Поездка в New York пример длинного названия поста', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:07:09', 10, '904830932.jpg', '320-904830932.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `users`
 --
 
@@ -54,8 +83,8 @@ CREATE TABLE `users` (
   `role` varchar(191) DEFAULT NULL,
   `username` varchar(191) DEFAULT NULL,
   `lastname` varchar(191) DEFAULT NULL,
-  `city` varchar(191) DEFAULT NULL,
-  `country` varchar(191) DEFAULT NULL,
+  `city` varchar(191) NOT NULL,
+  `country` varchar(255) NOT NULL,
   `avatar` varchar(191) DEFAULT NULL,
   `avatar_small` varchar(191) DEFAULT NULL,
   `recovery_code` varchar(191) DEFAULT NULL,
@@ -67,10 +96,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `username`, `lastname`, `city`, `country`, `avatar`, `avatar_small`, `recovery_code`, `recovery_code_times`) VALUES
-(10, 'nat@gmail.ru', '$2y$10$8ALjeIBDitX6j3FsVDE8sujlYe/Kyn6WOwukRfXx1PCiV6u8EKmCC', 'admin', 'Natalia', 'Kaseeva', 'Moscow', 'Russia', '686146683.jpg', '48-686146683.jpg', NULL, NULL),
+(10, 'nat@gmail.com', '$2y$10$8ALjeIBDitX6j3FsVDE8sujlYe/Kyn6WOwukRfXx1PCiV6u8EKmCC', 'admin', 'Natalia', 'Kaseeva', 'Moscow', 'Russia', '686146683.jpg', '48-686146683.jpg', NULL, NULL),
 (11, 'nat@yandex.ru', '$2y$10$qowNnz1tbT0gVzRpouDdoe2v7s9GymxNaVxIvHonBF9a/Jnjz3iQO', 'user', 'Emelian', 'Kasakov', 'Kazan', 'Russia', '6987362.jpg', '48-6987362.jpg', 'GSiOocIfv1xtHae', 0),
 (12, 'nat1@gmail.ru', '$2y$10$eoa6qDB7ph4eGdWnDlOH0eaXGIYKX5.KpMdXGCxwWW5XWqogp0zHu', 'user', 'Natalia2', 'Kaseeva2', '', '', '515719382.jpg', '48-515719382.jpg', 'Q35GHWgkdwfs2xL', 0),
-(15, 'nat@mail.ru', '$2y$10$D48HvcjnN1902YDtJ53kC.bfcpwo.6UEne6cZCsGq7FTNhEw0ac4m', 'user', NULL, NULL, NULL, NULL, NULL, NULL, 'yXZwfqtEmHuixbW', 0);
+(15, 'nat@mail.ru', '$2y$10$D48HvcjnN1902YDtJ53kC.bfcpwo.6UEne6cZCsGq7FTNhEw0ac4m', 'user', NULL, NULL, '', '', NULL, NULL, 'yXZwfqtEmHuixbW', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -81,6 +110,13 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `username`, `lastname`, 
 --
 ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_foreignkey_posts_author` (`author_id`);
 
 --
 -- Индексы таблицы `users`
@@ -97,6 +133,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
