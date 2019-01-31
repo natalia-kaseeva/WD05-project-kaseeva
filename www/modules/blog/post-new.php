@@ -24,6 +24,7 @@
                 $fileErrorMsg = $_FILES['post-image']['error'];
                 $kaboom = explode('.', $fileName);
                 $fileExt = end($kaboom);
+
                 list($width, $height) = getimagesize($fileTmpLoc);
                 if($width < 10 || $height < 10) {
                     $errors[] = ['title' => 'Изображение не имеет размеров.', 'desc
@@ -38,25 +39,26 @@
                 if($fileErrorMsg == 1) {
                     $errors[] = ['title' => 'При загрузке изображения произошла ошибка.'];
                 }
+
                 //Перемещаем загруженный фал в нужную директорию
                 $db_file_name = rand(100000000, 999999999) . '.' . $fileExt;
-                $postImgFolterLocation = ROOT . 'usercontent/blog/';
-                $uploadFile = $postImgFolterLocation . $db_file_name;
+                $postImgFolderLocation = ROOT . 'usercontent/blog/';
+                $uploadFile = $postImgFolderLocation . $db_file_name;
                 $moveResult = move_uploaded_file($fileTmpLoc, $uploadFile);
                 if($moveResult != true) {
                     $errors[] = ['title' => 'Ошибка сохранения файла'];
                 }
                 include_once(ROOT . 'libs/image_resize_imagick.php');
                 //Устаналиваем размеры для большой картинки блога
-                $target_file = $postImgFolterLocation . $db_file_name;
+                $target_file = $postImgFolderLocation . $db_file_name;
                 $wmax = 920;
                 $hmax = 620;
                 $img = createThumbnailBig($target_file, $wmax, $hmax);
                 $img->writeImage($target_file);
                 $post->postImg = $db_file_name;
                 //Устаналиваем размеры для малой картинки, которая будет отображаться в карточке
-                $target_file = $postImgFolterLocation . $db_file_name;
-                $resized_file = $postImgFolterLocation . '320-' . $db_file_name;
+                $target_file = $postImgFolderLocation . $db_file_name;
+                $resized_file = $postImgFolderLocation . '320-' . $db_file_name;
                 $wmax = 320;
                 $hmax = 140;
                 $img = createThumbnailCrop($target_file, $wmax, $hmax);
@@ -80,5 +82,4 @@
     include(ROOT . 'templates/_parts/_head.tpl');
     include(ROOT . 'templates/template.tpl');
     include(ROOT . 'templates/_parts/_footer.tpl');
-    /*include(ROOT . 'templates/_parts/_foot.tpl');*/
-?>
+    include(ROOT . 'templates/_parts/_foot.tpl');

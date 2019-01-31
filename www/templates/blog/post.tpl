@@ -11,9 +11,12 @@
                     <div class="post-info__date"><?=rus_date('j F Y H:i', strtotime($post['data_time']))?></div>
                     <div class="post-info__comments"><a class="postlink" href="#">2 комментария</a></div>
                 </div>
-                
                     <div class="post-img">
-                        <img src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="Горы"/>
+                        <?php if($post->post_img !='') { ?>
+                        <img src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="<?=$post['title']?>" />
+                        <?php } else {?>
+                        <img src="<?=HOST?>usercontent/blog-no-image.jpg?>" alt="<?=$post['title']?>" />
+                        <?php }?>
                     </div>
                 
                 <div class="post-content mb-25"><?=$post['text']?></div>
