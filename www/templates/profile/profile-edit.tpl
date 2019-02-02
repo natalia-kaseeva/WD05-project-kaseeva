@@ -3,7 +3,7 @@
         <div class="col-10 offset-1">
             <h1 class="title-general mt-0 mb-10">Редактировать профиль</h1>
             <?php include(ROOT . 'templates/_parts/_errors.tpl');?>
-            <form class="mt-35" enctype="multipart/form-data" method="POST" action="<?HOST?>profile-edit">
+            <form class="mt-35" enctype="multipart/form-data" method="POST" action="<?HOST?>profile-edit" novalidate>
                 <div class="user-edit-wrapper">
                     <div class="user-edit-name">
                         <label class="label" for="userEditName">Имя</label>

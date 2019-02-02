@@ -19,7 +19,7 @@ if ( isset($_POST['enter-button'])) {
 		}
 
 	// Проверка что пользователь уже существует
-		if ( R::count('users', 'email = ?', array($_POST['email']) ) > 0 ) {
+		if ( R::count('users', 'email = ?', array($_POST['email']))  > 0 && (trim($_POST['password']) !== '')) {
 		$errors[]  = [ 'title' => 'Пользователь с таким email уже зарегистрирован', 'desc' => 'Используйте другой Email адрес, или воспользуйтесь восстановлением пароля.'];
 	}
 
@@ -40,8 +40,8 @@ if ( isset($_POST['enter-button'])) {
 			exit();
 
 		}
-
 }
+
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/login/form-registration.tpl";

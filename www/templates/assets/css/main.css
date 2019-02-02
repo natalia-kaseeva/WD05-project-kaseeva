@@ -860,7 +860,7 @@ a.title-medium,
 }
 .nav__link:hover {
   text-decoration: none;
-}
+} 
 .user-block .nav__link {
   margin-right: 30px;
 }
@@ -1098,7 +1098,7 @@ a.title-medium,
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  text-decoration: underline;
+ /* text-decoration: underline; */ 
   margin-right: 50px;
 }
 .nav a:last-child {
@@ -1106,7 +1106,7 @@ a.title-medium,
 }
 .nav a:hover {
   text-decoration: none;
-}
+} 
 .header {
   background-image: url("../img/bg/header-bg.jpg");
   background-repeat: no-repeat;

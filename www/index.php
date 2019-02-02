@@ -52,12 +52,17 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/profile/edit.php";
 		break;
 
-	/*case 'blog':
-		echo "Blog page";
-		echo "<br>";
-		echo "$uri[1]";
-		// print_r($uri[1]);
-		break;*/
+	case 'blog':
+            include(ROOT . 'modules/blog/index.php');
+        break;
+
+    case 'blog/post-new':
+            include(ROOT . 'modules/blog/post-new.php');
+        break;
+
+    case 'blog/post':
+            include(ROOT . 'modules/blog/post.php');
+        break;
 	
 	default:
 		echo "Main page / 404";
