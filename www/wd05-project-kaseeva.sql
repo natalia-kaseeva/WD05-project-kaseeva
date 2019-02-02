@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 31 2019 г., 14:35
+-- Время создания: Фев 02 2019 г., 15:56
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -40,6 +40,28 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `name`, `description`) VALUES
 (1, 'Егор Казаков', 'Я веб-разработчик');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `cat_title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `categories`
+--
+
+INSERT INTO `categories` (`id`, `cat_title`) VALUES
+(3, 'Путешествия'),
+(8, 'Покупки'),
+(9, 'php'),
+(12, 'html3'),
+(15, 'html5');
 
 -- --------------------------------------------------------
 
@@ -104,7 +126,9 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `username`, `lastname`, 
 (16, 'nat@yandex.com', '$2y$10$RBDs.lo6zycJwnRuGGkSZuAb7dWlX.wnVzWjxDli/YRTE1fHd3TO6', 'user', NULL, NULL, '', '', NULL, NULL, NULL, NULL),
 (17, 'nat@gmail.ru', '$2y$10$f0kaes/KqBrxxCwSCGi6V.3f4pXXdF9rt41IH6YKIpeYspflvHDYG', 'user', NULL, NULL, '', '', NULL, NULL, NULL, NULL),
 (18, 'nat@mail.ru', '$2y$10$SJsnoW1EM8O973ZyqRBktu90yNQm7glfstALqG2dbCqVIXPSaL/4C', 'user', NULL, NULL, '', '', NULL, NULL, NULL, NULL),
-(19, 'nat1@gmail.ru', '$2y$10$H0.Uvx3JzhYT7tbEwWmubuwR5TjdntVwlL3iAl2AoOdBFbWliDuEC', 'user', 'Natalia2', 'Kaseeva2', 'Moscow', '', NULL, NULL, NULL, NULL);
+(19, 'nat1@gmail.ru', '$2y$10$H0.Uvx3JzhYT7tbEwWmubuwR5TjdntVwlL3iAl2AoOdBFbWliDuEC', 'user', 'Natalia2', 'Kaseeva2', 'Moscow', '', NULL, NULL, NULL, NULL),
+(20, 'nat3333@yandex.ru', '$2y$10$GC9pZYfZJsyjJibruItWb.JlI/xJSnlj/AS2jHc2ixmwnLRbzL5rG', 'admin', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL),
+(22, 'nat2@mail.ru', '$2y$10$wIpBGNHbIEECjBGuw.oYo.mEtYUju5NuiVH8CMNg8TQn8v/IPLEdC', 'user', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -114,6 +138,12 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `username`, `lastname`, 
 -- Индексы таблицы `about`
 --
 ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `categories`
+--
+ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -140,16 +170,22 @@ ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
