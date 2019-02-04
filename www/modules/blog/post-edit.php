@@ -1,9 +1,10 @@
 <?php
-    $title = 'Блог - добавить пост';
+    $title = 'Блог - Редактировать пост';
 
+    $post = R::load('posts', $_GET['id']);
     $categories = R::find('categories', 'ORDER BY cat_title ASC');
     
-    if(isset($_POST['add-post'])) {
+    if(isset($_POST['postUpdate'])) {
         if(trim($_POST['post-title']) == '') {
             $errors[] = ['title' => 'Введите заголовок поста'];
         }
@@ -11,11 +12,13 @@
             $errors[] = ['title' => 'Введите текст поста'];
         }
         if(empty($errors)) {
-            $post = R::dispense('posts');
+            /*$post = R::dispense('posts');*/
             $post->title = htmlentities($_POST['post-title']);
             $post->cat = htmlentities($_POST['postCat']);
             $post->text = $_POST['post-text'];
-            $post->dataTime = R::isoDateTime();
+            /*$post->dataTime = R::isoDateTime();*/
+            $post->updateTime = R::isoDateTime();
+
             $post->authorId = $_SESSION['logged_user']['id'];
             //Загрузка изображение для поста
             if(isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
@@ -48,6 +51,23 @@
                 $postImgFolderLocation = ROOT . 'usercontent/blog/';
                 $uploadFile = $postImgFolderLocation . $db_file_name;
                 $moveResult = move_uploaded_file($fileTmpLoc, $uploadFile);
+
+                // Если картинка поста  уже установлена, то удаляем файл
+                $postImg = $post->post_img;
+                if ( $postImg != "" ) {
+                    $picurl = $postImgFolderLocation . $postImg;
+                    // Удаляем аватар
+                    // die($picurl); 
+                    if ( file_exists($picurl) ) { unlink($picurl); }
+                    $picurl320 = $postImgFolderLocation . '320-' . $postImg;
+                    if ( file_exists($picurl320) ) { unlink($picurl320); }
+                }
+
+            if ($moveResult != true) {
+                $errors[] = ['title' => 'Ошибка сохранения файла' ];
+            }
+
+
                 if($moveResult != true) {
                     $errors[] = ['title' => 'Ошибка сохранения файла'];
                 }
@@ -77,7 +97,7 @@
     // Готовим контент для центральной части
     ob_start();
     include(ROOT . 'templates/_parts/_header.tpl');
-    include(ROOT . 'templates/blog/post-new.tpl');
+    include(ROOT . 'templates/blog/post-edit.tpl');
     $content = ob_get_contents();
     ob_end_clean();
     

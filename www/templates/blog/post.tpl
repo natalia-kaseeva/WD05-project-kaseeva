@@ -3,16 +3,26 @@
         <div class="col-10 offset-1">
             <div class="post">
                 <div class="post-head">
-                    <h1 class="title-general mb-0 mt-0 title--width"><?=$post['title']?></h1><a class="button button-edit post-head--position" href="#">Редактировать</a>
+                    <h1 class="title-general mb-0 mt-0 title--width"><?=$post['title']?></h1>
+                    <a class="button button-edit post-head--position" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">Редактировать</a>
                 </div>
                 <div class="post-info">
-                    <div class="post-info__author">Емельян Казаков</div>
-                    <div class="post-info__topic"><a class="postlink" href="#">Путешествия</a></div>
-                    <div class="post-info__date"><?=rus_date('j F Y H:i', strtotime($post['data_time']))?></div>
+                    <div class="post-info__author"><?=$post['username']?> <?=$post['lastname']?></div>
+                    <div class="post-info__topic"><a class="postlink" href="#"><?=$post['cat_title']?></a></div>
+                    <div class="post-info__date">
+
+                        <?php if(isset($post['update_time']))
+                            echo rus_date('j F Y H:i', strtotime($post['update_time']));
+                        else 
+                            echo rus_date('j F Y H:i', strtotime($post['data_time']));
+                        ?>
+
+                    </div>
+
                     <div class="post-info__comments"><a class="postlink" href="#">2 комментария</a></div>
                 </div>
                     <div class="post-img">
-                        <?php if($post->post_img !='') { ?>
+                        <?php if($post['post_img'] != '') { ?>
                         <img src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="<?=$post['title']?>" />
                         <?php } else {?>
                         <img src="<?=HOST?>usercontent/blog-no-image.jpg?>" alt="<?=$post['title']?>" />
