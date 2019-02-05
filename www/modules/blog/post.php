@@ -1,7 +1,7 @@
 <?php
 
  $sql = 'SELECT 
-        posts.id,posts.title,posts.text,posts.data_time,posts.post_img,posts.author_id,posts.cat,
+        posts.id,posts.title,posts.text,posts.data_time,posts.update_time,posts.post_img,posts.author_id,posts.cat,
         users.username,users.lastname,
         categories.cat_title
         FROM `posts`
