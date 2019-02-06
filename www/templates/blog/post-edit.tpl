@@ -1,15 +1,3 @@
-<!-- <?php
-
-echo "<pre>";
-print_r($post);
-echo "</pre>";
-
-
-echo "<pre>";
-print_r($categories);
-echo "</pre>";
-?>  -->
-
 <div class="container pl-0 pr-0 pt-80 pb-120">
     <div class="row m-0">
         <div class="col-10 offset-1 p-0">
@@ -67,5 +55,3 @@ echo "</pre>";
         </div>
     </div>
 </div>
-
-<!--  <script src="<?=HOST?>libs/ckeditor/ckeditor.js"></script> -->

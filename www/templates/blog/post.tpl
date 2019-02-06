@@ -2,9 +2,21 @@
     <div class="row">
         <div class="col-10 offset-1">
             <div class="post">
+
+                <?php
+                    if(isset($_GET['result'])) {
+                        include(ROOT . 'templates/blog/_results.tpl');
+                    }
+                ?>
+
                 <div class="post-head">
-                    <h1 class="title-general mb-0 mt-0 title--width"><?=$post['title']?></h1>
-                    <a class="button button-edit post-head--position" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">Редактировать</a>
+                    <h1 class="title-general mb-0 mt-0"><?=$post['title']?></h1>
+                     <?php if(isAdmin()) { ?>
+                    <div class="post-head-buttons">
+                    <a class="button button-edit mr-15" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">Редактировать</a>
+                    <a class="button button-delete" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>">Удалить</a>
+                    </div>
+                    <?php } ?>
                 </div>
                 <div class="post-info">
                     <div class="post-info__author"><?=$post['username']?> <?=$post['lastname']?></div>

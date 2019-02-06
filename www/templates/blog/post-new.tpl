@@ -16,7 +16,7 @@
                         <label class="label" for="select-category">Категории</label>
                         <div class="add-post-content__name mt-10">
                             <select class="form-control mt-10" name="postCat">
-                               <option >Выберите категорию</option>
+                               <option disabled selected>Выберите категорию</option>
 
                                 <?php foreach($categories as $category): ?>
                                     <option value="<?=$category['id']?>"><?=$category['cat_title']?></option>

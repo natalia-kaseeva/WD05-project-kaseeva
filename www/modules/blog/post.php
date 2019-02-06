@@ -12,11 +12,6 @@
     $post = R::getAll($sql);
     $post = $post[0];
 
- /*   echo "<pre>";
-    print_r($post[0]);
-    echo "</pre>";
-    die();
-*/
     $title = $post['title'];
     
     //Подготавливаем контент для центральной части
