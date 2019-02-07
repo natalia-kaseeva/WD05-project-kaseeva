@@ -11,6 +11,21 @@
                         <label class="label" for="add-post-name">Заголовок</label>
                         <input class="input" name="post-title" id="add-post-name" type="text" placeholder="Введите заголовок поста" />
                     </div>
+
+                        <div class="add-post-content__name mt-30">
+                        <label class="label" for="select-category">Категории</label>
+                        <div class="add-post-content__name mt-10">
+                            <select class="form-control mt-10" name="postCat">
+                               <option disabled selected>Выберите категорию</option>
+
+                                <?php foreach($categories as $category): ?>
+                                    <option value="<?=$category['id']?>"><?=$category['cat_title']?></option>
+                                <?php endforeach ?>
+
+                            </select>
+                        </div> 
+                    </div>
+                    
                     <div class="add-post-content__img mt-30">
                         <section class="upload-file">
                             <h6 class="upload-file__title">Изображение</h6>
@@ -21,7 +36,8 @@
                     </div>
                     <div class="add-post-content__main mt-30">
                         <label class="label" for="addPostText">Содержание</label>
-                            <textarea class="textarea input-post-content" name="post-text" id="addPostText" placeholder="Введите текст поста"></textarea>
+                            <textarea class="textarea input-post-content" name="post-text" id="ckEditor" placeholder="Введите текст поста"></textarea>
+                            <?php include_once ROOT . "templates/_parts/_ckEditorConnect.tpl" ?>
                         </div>
                     <div class="add-post-content__submit mt-30">
                         <input class="button button-save mr-20" type="submit" name="add-post" value="Добавить" />
@@ -32,3 +48,5 @@
         </div>
     </div>
 </div>
+
+<script src="<?=HOST?>libs/ckeditor/ckeditor.js"></script>

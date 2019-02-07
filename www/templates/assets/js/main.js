@@ -11,6 +11,8 @@ $('[data-notify-hide]').dblclick(function(){
 
 $('[data-notify-hide]').delay(2000).slideUp(400);
 
+/*CKEDITOR.replace('ckEditor');*/
+
 });
 
 

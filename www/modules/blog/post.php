@@ -1,8 +1,19 @@
 <?php
-    $title = 'Блог - пост в блоге';
-    
-    $post = R::findOne('posts', 'id=?', array($_GET['id']));
 
+ $sql = 'SELECT 
+        posts.id,posts.title,posts.text,posts.data_time,posts.update_time,posts.post_img,posts.author_id,posts.cat,
+        users.username,users.lastname,
+        categories.cat_title
+        FROM `posts`
+        LEFT JOIN categories ON  posts.cat=categories.id
+        INNER JOIN users ON  posts.author_id=users.id
+        WHERE posts.id =' . $_GET['id'] . ' LIMIT 1';
+   
+    $post = R::getAll($sql);
+    $post = $post[0];
+
+    $title = $post['title'];
+    
     //Подготавливаем контент для центральной части
     ob_start();
     include(ROOT . 'templates/_parts/_header.tpl');
