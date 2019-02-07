@@ -724,6 +724,8 @@ a.title-medium,
 .avatar--small {
   width: 48px;
   height: 48px;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .badge {
   display: inline-block;

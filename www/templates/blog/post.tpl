@@ -69,8 +69,11 @@
             </div>
             <h2 class="title-2 m-0 mb-15">Оставить комментарий</h2>
             <div class="comments-submit">
-                <div class="avatar avatar--small"><img src="../img/avatars/avatar.jpg" alt="alt text avatar" /></div>
-                <div class="comments-form"><b class="comments__author">Юрий Ключевский</b>
+                <div class="avatar avatar--small"><img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="alt text avatar" /></div>
+                <div class="comments-form"><b class="comments__author">
+                    <?=$_SESSION['logged_user']['username']?>
+                    <?=$_SESSION['logged_user']['lastname']?>
+                </b>
                     <div class="notification">
                         <div class="notification__title notification--error">Комментарий не может быть пустым</div>
                     </div><textarea class="textarea" name="comment-user" placeholder="Присоединиться к обсуждению..."></textarea><input class="button mt-10" type="submit" name="infoButton" value="Опубликовать" />
