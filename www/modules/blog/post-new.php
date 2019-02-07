@@ -11,11 +11,17 @@ $categories = R::find('categories', 'ORDER BY cat_title ASC');
 
 if(isset($_POST['add-post'])) {
     if(trim($_POST['post-title']) == '') {
-        $errors[] = ['title' => 'Введите заголовок поста'];
+        $errors[] = ['title' => 'Введите заголовок поста!'];
     }
+
     if(trim($_POST['post-text']) == '') {
-        $errors[] = ['title' => 'Введите текст поста'];
+        $errors[] = ['title' => 'Введите текст поста!'];
     }
+
+    if($_POST['postCat'] == '') {
+        $errors[] = ['title' => 'Выберите категорию!'];
+    }
+
     if(empty($errors)) {
         $post = R::dispense('posts');
         $post->title = htmlentities($_POST['post-title']);
@@ -23,6 +29,7 @@ if(isset($_POST['add-post'])) {
         $post->text = $_POST['post-text'];
         $post->dataTime = R::isoDateTime();
         $post->authorId = $_SESSION['logged_user']['id'];
+        
         //Загрузка изображение для поста
         if(isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
             //write file image params in variables
