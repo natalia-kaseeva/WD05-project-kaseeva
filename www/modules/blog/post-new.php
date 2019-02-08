@@ -35,9 +35,9 @@ if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] !=
         if ($width < 10 || $height < 10) {
             $errors[] = ['title' =>'Изображение не имеет размеров. Загрузите изображение побольше' ];
         }
-    } else {
+    } /*else {
         $errors[] = ['title' =>'При загрузке изображения произошла ошибка' ];
-    }
+    }*/
 
     if ($fileSize > 4194304) {
         $errors[] = ['title' =>'Файл изображения не болжен быть более 4 Mb' ];
