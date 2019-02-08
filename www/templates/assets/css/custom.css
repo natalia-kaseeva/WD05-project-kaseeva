@@ -28,3 +28,7 @@
   	display: -ms-flexbox;
   	display: flex;
 }
+
+.post-img img {
+  margin: 0 auto;
+}

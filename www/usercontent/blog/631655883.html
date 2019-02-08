@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"/><![endif]-->
+	<title>Обо мне</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" /><!-- build:cssVendor css/vendor.css -->
+	<link rel="stylesheet" href="./libs/normalize-css/normalize.css" />
+	<link rel="stylesheet" href="./libs/bootstrap-4-grid/grid.min.css" /><!-- endbuild -->
+	<!-- build:cssCustom css/main.css -->
+	<link rel="stylesheet" href="./css/main.css" /><!-- endbuild -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,600,700&amp;amp;subset=cyrillic-ext" />
+	<!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+</head>
+
+<body class="content-page">
+	<div class="header-admin">
+		<div class="header-admin__left">
+			<div class="user ml-20"><a class="avatar-link" href="#!">
+					<div class="avatar avatar--small"><img src="../img/avatars/avatar.jpg" alt="alt text avatar" /></div>
+				</a>
+				<div class="brif ml-20">
+					<p class="brif__name">Иван Пластун</p><span class="badge">Администратор</span>
+				</div>
+			</div>
+			<nav class="admin-nav ml-70"><a href="add-post.html"><i class="fas fa-plus-circle"></i>Пост</a><a href="works-add-work.html"><i class="fas fa-plus-circle"></i>Работа</a><a href="about-me.html"><i class="fas fa-edit"></i>Обо мне</a><a href="contacts-edit.html"><i class="fas fa-edit"></i>Контакты</a><a href="contacts-messages.html"><i class="fas fa-envelope"></i>Сообщения</a></nav>
+		</div>
+		<div class="header-admin__right"><a href="#!"><i class="fas fa-sign-out-alt"></i>Выход</a></div>
+	</div>
+	<header class="header">
+		<div class="row header__wrapper header__wrapper--user">
+			<div class="logo">
+				<div class="logo__wrapper">
+					<div class="logo__img"><i class="far fa-paper-plane"></i></div>
+					<div class="logo__title">Digital Lifestyle</div>
+				</div>
+				<div class="logo__description">Сайт IT специалиста</div>
+			</div>
+			<div class="user-block">
+				<div class="user-block__wrapper">
+					<div class="row user-group">
+						<div class="avatar avatar--small"><img src="../img/avatars/avatar.jpg" alt="alt text avatar" /></div>
+						<div class="user-name"><span>Иван Пластун</span>
+							<p>Пользователь</p>
+							<div class="row user-buttons"><a class="button button-profile" href="user-profile.html">Профиль</a><a class="button button-profile" href="#">Выход</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<nav class="nav"><a class="nav__link" href="main.html">Главная</a><a class="nav__link" href="about-me.html">Обо мне</a><a class="nav__link" href="works.html">Работы</a><a class="nav__link" href="blog.html">Блог</a><a class="nav__link" href="contacts.html">Контакты</a></nav>
+		</div>
+	</header>
+	<div class="section-about-info mt-80 mb-65">
+		<div class="container">
+			<div class="row about-info">
+				<div class="col-md-3">
+					<div class="avatar"><img src="../img/avatars/avatar.jpg" alt="alt text avatar" /></div>
+				</div>
+				<div class="col-md-9">
+					<div class="about-info"><a class="button button-edit float-right" href="about-me-edit-information.html">Редактировать</a>
+						<p class="mb-15 about-info__name">Емельян Казаков</p>
+						<p class="mb-0">Я веб разработчик из Казани. Мне 26 лет.</p>
+						<p>Занимаюсь разработкой современных сайтов и приложенийю Мне нравится делать интересные и современные проекты. </p>
+						<p>Этот сайт я сделал в рамкаобучения в школе онлайн обучения WebCademy. Чуть позже освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!</p>
+						<h3 class="title-3 strong mt-25 mb-15">Что я умею</h3>
+						<p>Меня привлекает Frontend разработка, это не только моя работа, но и хобби. Также знаком и могу решать несложные задачи на Backend. Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-indikators pt-50">
+		<div class="container">
+			<div class="row indikators-block">
+				<div class="offset-md-3 col-md-7">
+					<h2 class="title-general mb-10 color-width">Технологии</h2>
+					<p class="indikators-block__text mt-0 mb-0">Которые использую в работе</p>
+				</div>
+				<div class="col-md-2"><a class="button button-edit" href="about-me-tech-edit.html">Редактировать</a></div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 list-technology"><span class="list-technology__text">Frontend</span><span class="list-technology__text">Backend</span><span class="list-technology__text">Workflow</span></div>
+				<div class="col-md-10">
+					<div class="container-indicators">
+						<div class="row ml-90 pt-40">
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--green val-90"></circle>
+								</svg>
+								<div class="indicator__text">HTML5</div>
+							</div>
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--green val-90"></circle>
+								</svg>
+								<div class="indicator__text">CSS3</div>
+							</div>
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--green val-90"></circle>
+								</svg>
+								<div class="indicator__text">js</div>
+							</div>
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--green val-90"></circle>
+								</svg>
+								<div class="indicator__text">jQuery</div>
+							</div>
+						</div>
+						<div class="row ml-90 pt-40">
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--blue val-90"></circle>
+								</svg>
+								<div class="indicator__text">PHP</div>
+							</div>
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--blue val-90"></circle>
+								</svg>
+								<div class="indicator__text">MySql</div>
+							</div>
+						</div>
+						<div class="row ml-90 pt-40">
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--yellow val-90"></circle>
+								</svg>
+								<div class="indicator__text">Git</div>
+							</div>
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--yellow val-90"></circle>
+								</svg>
+								<div class="indicator__text">Gulp</div>
+							</div>
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--yellow val-90"></circle>
+								</svg>
+								<div class="indicator__text">Bower</div>
+							</div>
+							<div class="indicator"><svg class="svg-box">
+									<circle class="circle circle--yellow val-90"></circle>
+								</svg>
+								<div class="indicator__text">WebPack</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sectoin-workflow pt-80 pb-120">
+		<div class="container">
+			<div class="row">
+				<div class="offset-md-3 col-md-9 experience-work mb-25">
+					<h2 class="title-general mt-0 mb-0">Опыт работы</h2><a class="button button-edit" href="about-me-work-edit.html">Редактировать</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="offset-md-3 col-md-9">
+					<div class="workflow-block mb-40">
+						<div class="workflow-block__date mb-15"><span>февраль 2017 - по настоящее время</span></div>
+						<div class="workflow-info">
+							<h4 class="title-4 mb-15 mt-0">Frontend разработчик, Вконтакте, mail.ru group</h4>
+							<p>Работы в команде Вконтакте. Работал в команде над обновлением сервиса Музыка, работа над видео разделом. Создание видеолеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.</p>
+						</div>
+					</div>
+					<div class="workflow-block mb-40">
+						<div class="workflow-block__date mb-15"><span>сентябрь 2015 - по январь 2017</span></div>
+						<div class="workflow-info">
+							<h4 class="title-4 mb-15 mt-0">Разработчик интерфейсов, Яндекс</h4>
+							<p>Работы в проекте ЯндексМузыка. Создание новых разделов сервиса. Оптимизация и создание новых компонентов платформы.</p>
+						</div>
+					</div>
+					<div class="workflow-block">
+						<div class="workflow-block__date mb-15"><span>март 2013 - по август 2015</span></div>
+						<div class="workflow-info">
+							<h4 class="title-4 mb-15 mt-0">Веб-разработчик, Cloud studio</h4>
+							<p>Frontend и Backend для клиентских проектов студии. Работа над студийной CMS для интернет магазиновю Участие в разработке CRM системы "Sky CRM". Стек используемых технологий Git, JS, Angular.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container pl-0 pr-0">
+			<div class="footer__container">
+				<div class="row ml-0 mr-0">
+					<div class="col-5 no-paddings">
+						<div class="footer__copyright">
+							<p>© Иван Пластун</p>
+							<p>Создано с <i class="mr-0 fas fa-heart"></i> в <a class="strong" href="http://webcademy.ru/" target="_blank">WebCademy.ru</a> в 2018 году</p>
+						</div>
+					</div>
+					<div class="col-3 no-paddings">
+						<nav class="footer__nav"><a href="main.html">Главная</a><a href="about-me.html">Обо мне</a><a href="works.html">Работы</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a></nav>
+					</div>
+					<div class="col-4 no-paddings">
+						<div class="social"><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-vk"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-twitter"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-youtube"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-instagram"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-facebook-f"></i></span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer><!-- build:jsLibs js/libs.js -->
+	<script src="./libs/jquery/jquery.min.js"></script><!-- endbuild -->
+	<!-- build:jsVendor js/vendor.js -->
+	<script src="./libs/jquery-custom-scrollbar/jquery.custom-scrollbar.js"></script><!-- endbuild -->
+	<!-- build:jsMain js/main.js -->
+	<script src="./js/main.js"></script>
+	<script src="./js/input-file.js"></script><!-- endbuild -->
+	<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&amp;callback=initMap"></script>
+	<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</body>
+
+</html>
