@@ -22,6 +22,35 @@ if(isset($_POST['add-post'])) {
         $errors[] = ['title' => 'Выберите категорию!'];
     }
 
+if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
+
+    //Запишем параметры картинки в переменные
+    $fileName = $_FILES['post-image']['name'];//имя файла(с расширением)
+    $fileTmpLoc = $_FILES['post-image']['tmp_name'];//где файл временно размещён
+    $fileType = $_FILES['post-image']['type'];
+    $fileSize = $_FILES['post-image']['size'];
+    $fileErrorMsg = $_FILES['post-image']['error'];
+    if (@getimagesize($fileTmpLoc)) {
+        list($width, $height) = getimagesize($fileTmpLoc);
+        if ($width < 10 || $height < 10) {
+            $errors[] = ['title' =>'Изображение не имеет размеров. Загрузите изображение побольше' ];
+        }
+    } else {
+        $errors[] = ['title' =>'При загрузке изображения произошла ошибка' ];
+    }
+
+    if ($fileSize > 4194304) {
+        $errors[] = ['title' =>'Файл изображения не болжен быть более 4 Mb' ];
+    }
+    if (!preg_match("/\.(gif|jpg|png|jpeg)$/i", $fileName)) {
+        $errors[] = ['title' => 'Неверный формат файла', 'desc' => '<p>Файл изображения должен быть в формате gif, jpg, png или jpeg</p>'];
+    }
+    if ($fileErrorMsg == 1) {
+        $errors[] = ['title' =>'При загрузке изображения произошла ошибка. Повторите попытку' ];
+    }
+
+}
+
     if(empty($errors)) {
         $post = R::dispense('posts');
         $post->title = htmlentities($_POST['post-title']);
@@ -29,7 +58,7 @@ if(isset($_POST['add-post'])) {
         $post->text = $_POST['post-text'];
         $post->dataTime = R::isoDateTime();
         $post->authorId = $_SESSION['logged_user']['id'];
-        
+
         //Загрузка изображение для поста
         if(isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
             //write file image params in variables
@@ -44,16 +73,16 @@ if(isset($_POST['add-post'])) {
             list($width, $height) = getimagesize($fileTmpLoc);
             if($width < 10 || $height < 10) {
                 $errors[] = ['title' => 'Изображение не имеет размеров.', 'desc
-                ' => 'Загрузите изображение с большим разрешением.'];
+                ' => 'Загрузите изображение с большим разрешением'];
             }
             if($fileSize > 10485760) {
-                $errors[] = ['title' => 'Размер файла с изображением не должен превышать 10Mb.'];
+                $errors[] = ['title' => 'Размер файла с изображением не должен превышать 10Mb'];
             }
             if(!preg_match('/\.(gif|png|jpg|jpeg)$/i', $fileName)) {
-                $errors[] = ['title' => 'Неверный формат файла.', 'desc' => 'Файл изображения должен быть в формате jpg, png или gif.'];
+                $errors[] = ['title' => 'Неверный формат файла.', 'desc' => 'Файл изображения должен быть в формате jpg, png или gif'];
             }
             if($fileErrorMsg == 1) {
-                $errors[] = ['title' => 'При загрузке изображения произошла ошибка.'];
+                $errors[] = ['title' => 'При загрузке изображения произошла ошибка'];
             }
 
             //Перемещаем загруженный фал в нужную директорию
