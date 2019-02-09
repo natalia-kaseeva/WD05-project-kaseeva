@@ -19,7 +19,7 @@
                                <option disabled selected>Выберите категорию</option>
 
                                 <?php foreach($categories as $category): ?>
-                                    <option value="<?=$category['id']?>"><?=$category['cat_title']?></option>
+                                    <option value="<?=$category['id']?>"><?=$category['cat_title']?></option> 
                                 <?php endforeach ?>
 
                             </select>

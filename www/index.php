@@ -92,6 +92,18 @@ switch ( $uri[0] ) {
         include(ROOT . 'modules/categories/delete.php');
     break;
 
+	case 'contacts':
+	    include(ROOT . 'modules/contacts/index.php');
+	break;
+
+	case 'contacts-edit':
+	    include(ROOT . 'modules/contacts/edit.php');
+	break;
+	
+	case 'contacts-messages':
+	    include(ROOT . 'modules/contacts/messages.php');
+	break;
+
 	default:
 		echo "Main page / 404";
 		break;

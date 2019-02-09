@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 07 2019 г., 14:49
+-- Время создания: Фев 09 2019 г., 20:56
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -93,6 +93,33 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(191) DEFAULT NULL,
+  `lastname` varchar(191) DEFAULT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `phone` double DEFAULT NULL,
+  `address` varchar(191) DEFAULT NULL,
+  `skype` varchar(191) DEFAULT NULL,
+  `vkontakte` varchar(191) DEFAULT NULL,
+  `facebook` varchar(191) DEFAULT NULL,
+  `github` varchar(191) DEFAULT NULL,
+  `twitter` varchar(191) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `email`, `phone`, `address`, `skype`, `vkontakte`, `facebook`, `github`, `twitter`) VALUES
+(1, 'Natalia', 'Kaseeva', 'nat@gmail.com', 75555555555, 'Moscow', 'nat', 'https://vk.com/', 'https://www.facebook.com', 'http://wd05-project-kaseeva/contacts-edit', '');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `posts`
 --
 
@@ -121,7 +148,8 @@ INSERT INTO `posts` (`id`, `title`, `text`, `data_time`, `author_id`, `post_img`
 (19, 'Как я ходил в поход этим летом', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:06:47', 10, '497402954.jpg', '320-497402954.jpg', NULL, NULL),
 (20, 'Поездка в New York пример длинного названия поста', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim illo ipsum amet ad necessitatibus tempore suscipit fuga magni officiis iste atque optio, harum veniam, assumenda placeat quaerat. Adipisci voluptate harum maiores, nobis, eveniet architecto dolorem autem magni veniam fugiat nulla quos officiis, omnis exercitationem optio quisquam voluptatem nihil illum quas, repellat. Omnis possimus cupiditate, maiores deleniti assumenda laudantium ducimus repudiandae, provident soluta pariatur id error. Quod veniam accusantium esse quasi fugiat reiciendis beatae itaque omnis repellendus illum dolor id expedita aperiam, debitis voluptatibus placeat quos adipisci quidem ut assumenda explicabo! Fugit quasi reprehenderit est, incidunt quae maxime cum eveniet!', '2019-01-30 21:07:09', 10, '904830932.jpg', '320-904830932.jpg', NULL, NULL),
 (22, 'Поездка в New York пример длинного названия поста', '<p>ffhtytrerwrwr</p>\r\n', '2019-01-31 13:14:40', 10, NULL, NULL, '9', '2019-02-06 11:44:03'),
-(37, 'Lorem ipsum dolor sit amet.', '<h2 style=\"font-style:italic\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sit culpa nostrum, iste, repellat quae corrupti qui et ea eos asperiores! Excepturi a, quidem, minus eius nisi odio pariatur tempore aliquam deserunt mollitia rem perspiciatis porro molestias omnis laudantium eos, ad. Libero provident asperiores, qui corporis cumque assumenda officiis numquam.</h2>\r\n', '2019-02-06 12:17:58', 10, '990853881.jpg', '320-990853881.jpg', '8', '2019-02-06 12:18:32');
+(37, 'Lorem ipsum dolor sit amet.', '<h2 style=\"font-style:italic\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sit culpa nostrum, iste, repellat quae corrupti qui et ea eos asperiores! Excepturi a, quidem, minus eius nisi odio pariatur tempore aliquam deserunt mollitia rem perspiciatis porro molestias omnis laudantium eos, ad. Libero provident asperiores, qui corporis cumque assumenda officiis numquam.</h2>\r\n', '2019-02-06 12:17:58', 10, '990853881.jpg', '320-990853881.jpg', '8', '2019-02-06 12:18:32'),
+(40, 'Парк находится в горах', '<p>l</p>\r\n', '2019-02-09 12:16:35', 10, NULL, NULL, '15', '2019-02-09 12:16:42');
 
 -- --------------------------------------------------------
 
@@ -182,6 +210,12 @@ ALTER TABLE `comments`
   ADD KEY `index_foreignkey_comments_user` (`user_id`);
 
 --
+-- Индексы таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `posts`
 --
 ALTER TABLE `posts`
@@ -208,7 +242,7 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблицы `comments`
@@ -217,10 +251,16 @@ ALTER TABLE `comments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT для таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

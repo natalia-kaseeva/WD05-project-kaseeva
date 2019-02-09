@@ -18,11 +18,11 @@ if(isset($_POST['add-post'])) {
         $errors[] = ['title' => 'Введите текст поста!'];
     }
 
-    if($_POST['postCat'] == '') {
+    /*if(trim($_POST['postCat']) == '') {
         $errors[] = ['title' => 'Выберите категорию!'];
-    }
+    }*/
 
-if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
+    if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
 
     //Запишем параметры картинки в переменные
     $fileName = $_FILES['post-image']['name'];//имя файла(с расширением)
@@ -54,7 +54,7 @@ if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] !=
     if(empty($errors)) {
         $post = R::dispense('posts');
         $post->title = htmlentities($_POST['post-title']);
-        $post->cat = htmlentities($_POST['postCat']);
+        /*$post->cat = htmlentities($_POST['postCat']);*/
         $post->text = $_POST['post-text'];
         $post->dataTime = R::isoDateTime();
         $post->authorId = $_SESSION['logged_user']['id'];
