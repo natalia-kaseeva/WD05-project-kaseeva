@@ -22,7 +22,7 @@
             <a href="works-add-work.html"><i class="fas fa-plus-circle"></i>Работа</a>
             <a href="about-me.html"><i class="fas fa-edit"></i>Обо мне</a>
             <a href="<?=HOST?>contacts"><i class="fas fa-edit"></i>Контакты</a>
-            <a href="contacts-messages.html"><i class="fas fa-envelope"></i>Сообщения</a>
+            <a href="<?=HOST?>contacts-messages"><i class="fas fa-envelope"></i>Сообщения</a>
         </nav>
     </div>
     <div class="header-admin__right"><a href="<?=HOST?>logout"><i class="fas fa-sign-out-alt"></i>Выход</a></div>
