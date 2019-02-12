@@ -108,6 +108,22 @@ switch ( $uri[0] ) {
 	    include(ROOT . 'modules/contacts/message-delete.php');
 	break;
 
+	case 'about':
+		include "modules/about/index.php";
+		break;
+
+	case 'edit-text':
+		include "modules/about/edit-text.php";
+		break;
+
+	case 'edit-skills':
+		include "modules/about/edit-skills.php";
+		break;
+
+	case 'edit-jobs':
+		include "modules/about/edit-jobs.php";
+		break;
+
 	default:
 		echo "Main page / 404";
 		break;
