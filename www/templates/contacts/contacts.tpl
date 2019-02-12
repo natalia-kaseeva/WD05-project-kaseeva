@@ -1,7 +1,7 @@
 <div class="container pt-55 pb-80">
 	<div class="row">
 		<?php if ( isAdmin() ) { ?>
-		<div class="col-12 clearfix mb-30"><a class="button float-right" href="contacts-messages.html">Сообщения</a><a class="button button-edit float-right mr-20" href="<?=HOST?>contacts-edit">Редактировать</a></div>
+		<div class="col-12 clearfix mb-30"><a class="button float-right" href="<?=HOST?>contacts-messages">Сообщения</a><a class="button button-edit float-right mr-20" href="<?=HOST?>contacts-edit">Редактировать</a></div>
 		<?php }  ?>
 
 		<div class="col-5">
@@ -108,11 +108,25 @@
 
 		<div class="col-4 offset-1">
 			<div class="title-general mb-40">Связаться со мной</div>
-			<form class="feedback-form" action="#!"><input class="input" name="name-user" type="text" placeholder="Введите имя" /><input class="input" name="email-user" type="email" placeholder="Email" /><textarea class="textarea mb-20" name="user-message" placeholder="Сообщение"></textarea>
+
+			<?php require(ROOT . 'templates/_parts/_errors.tpl');?>
+            <?php require(ROOT . 'templates/_parts/_success.tpl');?>
+		
+			<?php if ( isset($_GET['result']) ) { ?>
+            <?php include ROOT . "templates/contacts/_result.tpl" ?>
+            <?php } ?> 
+
+			<form class="feedback-form" method="POST" enctype="multipart/form-data" action="<?=HOST?>contacts" novalidate>
+				<input class="input" name="name-user" type="text" placeholder="Введите имя" value="<?=@$_POST['name-user']?>" />
+				<input class="input" name="email-user" type="email" placeholder="Email" value="<?=@$_POST['email-user']?>"/>
+				<textarea class="textarea mb-20" name="user-message" placeholder="Сообщение"><?=@$_POST['user-message']?></textarea>
 				<section class="upload-file">
 					<h6 class="upload-file__title">Прикрепить файл</h6>
-					<p class="upload-file__description">jpg, png, pdf, doc, весом до 2Мб.</p><input class="input-file" type="file" name="upload-file" id="upload-file" data-multiple-caption="{count}" /><label class="input-file-mark input-file-mark--rounded" for="upload-file">Выбрать файл</label><span>Файл не выбран</span>
-				</section><input class="button button-save mt-20" type="submit" name="save-button" value="Отправить" />
+					<p class="upload-file__description">jpg, png, pdf, doc, весом до 2Мб.</p>
+					<input class="input-file" type="file" name="upload-file" id="upload-file" data-multiple-caption="{count}" /><label class="input-file-mark input-file-mark--rounded" for="upload-file">Выбрать файл</label>
+					<span>Файл не выбран</span>
+				</section>
+				<input class="button button-save mt-20" type="submit" name="newMessage" value="Отправить" />
 			</form>
 		</div>
 	</div>
