@@ -85,7 +85,6 @@ if(isset($_POST['newMessage'])) {
         }
 
             R::store($message);
-            /*$success[] = ['title' => 'Сообщение было успешно отправлено!'];*/
             header('Location:' . HOST . "contacts?result=messageCreated");
             exit(); 
     }

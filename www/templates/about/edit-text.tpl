@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <h1 class="title-general edit-title--color mt-0 mb-35">Редактировать - Обо Мне</h1>
+                <h1 class="title-general edit-title--color mt-0 mb-35">Редактировать - информация обо Мне</h1>
 
                 <?php require(ROOT . 'templates/_parts/_errors.tpl');?>
                 <form method="POST" enctype="multipart/form-data" action="<?=HOST?>edit-text" class="about-me-edit-info-form" id="about-me-edit-info">

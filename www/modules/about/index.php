@@ -3,8 +3,8 @@
 $title = 'Обо мне';
 
 $about = R::load('about', 1);
-/*$jobs = R::find('jobs', 'ORDER BY id DESC');
-$skills = R::load('skills', 1);*/
+$jobs = R::find('jobs', 'ORDER BY id DESC');
+$skills = R::load('skills', 1);
 
 //Подготавливаем контент для центарльной части
 ob_start();

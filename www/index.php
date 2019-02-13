@@ -124,6 +124,10 @@ switch ( $uri[0] ) {
 		include "modules/about/edit-jobs.php";
 		break;
 
+	case 'edit-delete-jobs':
+		include ROOT . "modules/about/edit-delete-jobs.php";
+		break;
+
 	default:
 		echo "Main page / 404";
 		break;
