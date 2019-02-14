@@ -132,4 +132,4 @@
 	</div>
 </div>
 <div class="geolocation" id="map"></div>
-<script src="js/googlemap.js"></script>
+<script src="<?=HOST?>templates/assets/js/googlemap.js"></script>

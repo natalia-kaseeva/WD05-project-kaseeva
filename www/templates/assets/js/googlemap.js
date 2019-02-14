@@ -15,7 +15,7 @@ function initMap() {
         position: zelenograd,
         map: map,
         title: 'Зеленоград',
-        icon: 'img/location/pin-green.png'
-
     });
+    
+   markerZelenograd.setMap(map);
 }
