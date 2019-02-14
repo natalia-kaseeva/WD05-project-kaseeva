@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 12 2019 г., 10:24
+-- Время создания: Фев 14 2019 г., 10:16
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -29,17 +29,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `about` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int(11) UNSIGNED NOT NULL,
+  `firstname` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `lastname` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_520_ci,
+  `photo` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Дамп данных таблицы `about`
 --
 
-INSERT INTO `about` (`id`, `name`, `description`) VALUES
-(1, 'Егор Казаков', 'Я веб-разработчик');
+INSERT INTO `about` (`id`, `firstname`, `lastname`, `description`, `photo`) VALUES
+(1, 'Наталья', 'Касеева', '<p><strong>Я веб разработчик из Москвы!&nbsp;Мне 27 лет.</strong></p>\r\n\r\n<p><em>Занимаюсь разработкой современных сайтов и приложений,&nbsp;мне нравится делать интересные и современные проекты.</em></p>\r\n\r\n<p><em>Этот сайт я сделала&nbsp;в рамках обучения в школе онлайн обучения WebCademy. Чуть позже освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!</em></p>\r\n\r\n<p><em>Меня привлекает Frontend разработка, это не только моя работа, но и хобби. Также&nbsp; могу решать несложные задачи на Backend,&nbsp;использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.</em></p>\r\n', '1326070076.jpg');
 
 -- --------------------------------------------------------
 
@@ -120,6 +122,26 @@ INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `email`, `phone`, `addres
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `period` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `period`, `title`, `description`) VALUES
+(6, 'февраль 2017 - по настоящее время', 'Frontend разработчик, Вконтакте, mail.ru group', 'Работы в команде Вконтакте. Работал в команде над обновлением сервиса Музыка, работа над видео разделом. Создание видеолеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `messages`
 --
 
@@ -175,6 +197,33 @@ INSERT INTO `posts` (`id`, `title`, `text`, `data_time`, `author_id`, `post_img`
 (22, 'Поездка в New York пример длинного названия поста', '<p>ffhtytrerwrwr</p>\r\n', '2019-01-31 13:14:40', 10, NULL, NULL, '9', '2019-02-06 11:44:03'),
 (37, 'Lorem ipsum dolor sit amet.', '<h2 style=\"font-style:italic\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sit culpa nostrum, iste, repellat quae corrupti qui et ea eos asperiores! Excepturi a, quidem, minus eius nisi odio pariatur tempore aliquam deserunt mollitia rem perspiciatis porro molestias omnis laudantium eos, ad. Libero provident asperiores, qui corporis cumque assumenda officiis numquam.</h2>\r\n', '2019-02-06 12:17:58', 10, '990853881.jpg', '320-990853881.jpg', '8', '2019-02-06 12:18:32'),
 (40, 'Парк находится в горах', '<p>l</p>\r\n', '2019-02-09 12:16:35', 10, NULL, NULL, '15', '2019-02-09 12:16:42');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `skills`
+--
+
+CREATE TABLE `skills` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `html` int(11) UNSIGNED DEFAULT NULL,
+  `css` int(11) UNSIGNED DEFAULT NULL,
+  `js` int(11) UNSIGNED DEFAULT NULL,
+  `jquery` int(11) UNSIGNED DEFAULT NULL,
+  `php` int(11) UNSIGNED DEFAULT NULL,
+  `mysql` int(11) UNSIGNED DEFAULT NULL,
+  `git` int(11) UNSIGNED DEFAULT NULL,
+  `gulp` int(11) UNSIGNED DEFAULT NULL,
+  `npm` int(11) UNSIGNED DEFAULT NULL,
+  `yarn` int(11) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `skills`
+--
+
+INSERT INTO `skills` (`id`, `html`, `css`, `js`, `jquery`, `php`, `mysql`, `git`, `gulp`, `npm`, `yarn`) VALUES
+(1, 100, 90, 70, 80, 50, 50, 70, 70, 90, 0);
 
 -- --------------------------------------------------------
 
@@ -241,6 +290,12 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `messages`
 --
 ALTER TABLE `messages`
@@ -252,6 +307,12 @@ ALTER TABLE `messages`
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `index_foreignkey_posts_author` (`author_id`);
+
+--
+-- Индексы таблицы `skills`
+--
+ALTER TABLE `skills`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
@@ -267,7 +328,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `categories`
@@ -288,6 +349,12 @@ ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
@@ -298,6 +365,12 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT для таблицы `skills`
+--
+ALTER TABLE `skills`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

@@ -30,7 +30,7 @@ if(isset($_POST['skillsUpdate'])) {
         $skills->yarn = htmlentities(intval($_POST['yarn']));
 
         R::store($skills);
-        header('Location: ' . HOST . 'about');
+        header('Location: ' . HOST . 'about?result=skillsUpdated');
         exit();
     }
 }

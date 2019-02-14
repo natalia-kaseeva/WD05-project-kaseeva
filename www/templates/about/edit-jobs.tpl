@@ -26,7 +26,14 @@
                     <label class="label" for="text">Описание работы, должностные обязанности, достигнутые результаты</label>
                     <textarea class="textarea" name="description" id="text" placeholder="Напишите интересное краткое содержательное описание"><?=@$_POST['description']?></textarea>
 
-                    <input class="button button-save" type="submit" name="newJob" value="Добавить" />
+                    <div class="row">
+                        <div class="col-auto pr-30">
+                            <input class="button button-save" type="submit" name="newJob" value="Добавить" />
+                        </div>
+                        <div class="col-auto">
+                            <a class="button" href="<?=HOST?>about">Отмена</a>
+                        </div>
+                    </div>                  
                 </form>
             </div>
         </div>

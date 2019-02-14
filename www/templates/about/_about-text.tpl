@@ -1,5 +1,8 @@
 <div class="section-about-info mt-80 mb-65">
     <div class="container">
+        <?php if ( isset($_GET['result']) ) { ?>
+        <?php include ROOT . "templates/about/_result.tpl" ?>
+        <?php } ?>
         <div class="row about-info">
             <div class="col-md-3">
                 <div class="avatar">

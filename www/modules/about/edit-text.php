@@ -30,10 +30,7 @@ if(isset($_POST['textUpdate'])) {
             $kaboom = explode('.', $fileName);
             $fileExt = end($kaboom);
             list($width, $height) = getimagesize($fileTmpLoc);
-            /*if($width < 10 || $height < 10 ) {
-                $errors[] = ['title' => 'Изображение не имеет размеров.', 'desc' => '<p>Загрузите изображение с большим разрешением.</p>'];
-            }*/
-
+       
             if($fileSize > 4194304 ) {
                 $errors[] = ['title' => 'Размер изображения не должен превышать 4Mb'];
             }
@@ -103,7 +100,7 @@ if(isset($_POST['textUpdate'])) {
         }
 
         R::store($about);
-        header('Location: ' . HOST . 'about');
+        header('Location: ' . HOST . 'about?result=textUpdated');
         exit();
     }
 }
