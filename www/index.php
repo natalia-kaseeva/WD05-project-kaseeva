@@ -128,6 +128,26 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/about/edit-delete-jobs.php";
 		break;
 
+	case 'portfolio':
+		require ROOT . "modules/portfolio/index.php";
+		break;
+
+	case 'portfolio/work-new':
+		require ROOT . "modules/portfolio/work-new.php";
+		break;
+
+	case 'portfolio/work-edit':
+		require ROOT . "modules/portfolio/work-edit.php";
+		break;
+
+	case 'portfolio/work-delete':
+		require ROOT . "modules/portfolio/work-delete.php";
+		break;
+		
+	case 'portfolio/work':
+		require ROOT . "modules/portfolio/work.php";
+		break;
+
 	default:
 		echo "Main page / 404";
 		break;

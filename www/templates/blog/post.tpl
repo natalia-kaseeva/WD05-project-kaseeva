@@ -44,14 +44,23 @@
                 
                 <div class="post-content mb-25"><?=$post['text']?></div>
                 <div class="post-buttons-nav mb-25">
-                    <a class="button button-previous" href="#">Назад 
+
+                    <?php if($prevId != ''): ?>
+                    <a class="button button-previous" href="<?=HOST?>blog/post?id=<?=$prevId?>">Назад 
                         <span class="button__icon button__icon--mright float-left">
                             <i class="mr-0 fas fa-arrow-left"></i>
                         </span></a>
-                        <a class="button button-next" href="#">Вперед 
+                        <?php else: ?>
+                        <div></div>
+                        <?php endif ?>
+
+                        <?php if($nextId != ''): ?>
+                        <a class="button button-next" href="<?=HOST?>blog/post?id=<?=$nextId?>">Вперед 
                             <span class="button__icon"><i class="mr-0 fas fa-arrow-right"></i>
                             </span>
                         </a>
+                        <?php endif ?>
+
                     </div>
             </div>
         <?php include(ROOT . 'templates/blog/_all-comments.tpl');?>

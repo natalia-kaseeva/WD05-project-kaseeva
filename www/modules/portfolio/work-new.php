@@ -1,35 +1,30 @@
 <?php
 
-if(!isAdmin()) { 
-    header('Location: ' . HOST);
-    die();
+if (!isAdmin()) {
+	header("Location: " . HOST);
+	die;
 }
-    
-$title = 'Блог - добавить пост';
 
-$categories = R::find('categories', 'ORDER BY cat_title ASC');
+$title = "Порфолио - добавить  работу";
 
-if(isset($_POST['add-post'])) {
-    if(trim($_POST['post-title']) == '') {
-        $errors[] = ['title' => 'Введите заголовок поста!'];
-    }
+if(isset($_POST['add-work'])){
 
-    if(trim($_POST['post-text']) == '') {
-        $errors[] = ['title' => 'Введите текст поста!'];
-    }
+	if (trim($_POST['title']) == '') {
+		$errors[] = ['title' => 'Введите название работы'];
+	}
 
-    if(trim($_POST['postCat']) == '') {
-        $errors[] = ['title' => 'Выберите категорию!'];
-    }
+	if (trim($_POST['text']) == '') {
+		$errors[] = ['title' => 'Введите содержание'];
+	}
 
-    if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
+	 if (isset($_FILES['workImg']['name']) && $_FILES['workImg']['tmp_name'] != '') {
 
     //Запишем параметры картинки в переменные
-    $fileName = $_FILES['post-image']['name'];//имя файла(с расширением)
-    $fileTmpLoc = $_FILES['post-image']['tmp_name'];//где файл временно размещён
-    $fileType = $_FILES['post-image']['type'];
-    $fileSize = $_FILES['post-image']['size'];
-    $fileErrorMsg = $_FILES['post-image']['error'];
+    $fileName = $_FILES['workImg']['name'];//имя файла(с расширением)
+    $fileTmpLoc = $_FILES['workImg']['tmp_name'];//где файл временно размещён
+    $fileType = $_FILES['workImg']['type'];
+    $fileSize = $_FILES['workImg']['size'];
+    $fileErrorMsg = $_FILES['workImg']['error'];
     
     if (@getimagesize($fileTmpLoc)) {
         list($width, $height) = getimagesize($fileTmpLoc);
@@ -50,22 +45,27 @@ if(isset($_POST['add-post'])) {
 
 }
 
-    if(empty($errors)) {
-        $post = R::dispense('posts');
-        $post->title = htmlentities($_POST['post-title']);
-        $post->cat = htmlentities($_POST['postCat']);
-        $post->text = $_POST['post-text'];
-        $post->dataTime = R::isoDateTime();
-        $post->authorId = $_SESSION['logged_user']['id'];
-
-        //Загрузка изображение для поста
-        if(isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
+	if (empty($errors)) {
+		$work = R::dispense('works');
+		
+		$work->title = htmlentities($_POST['title']);
+//		$work->cat = htmlentities($_POST['work-cat']);
+		$work->text = $_POST['text'];
+		$work->result = $_POST['result'];
+		$work->technologies = $_POST['technologies'];
+		$work->project = htmlentities($_POST['project']);
+		$work->github = htmlentities($_POST['github']);
+		$work->authorId = $_SESSION['logged_user']['id'];
+		$work->date_time = R::isoDateTime();
+		
+		//Загрузка изображение для поста
+        if(isset($_FILES['workImg']['name']) && $_FILES['workImg']['tmp_name'] != '') {
             //write file image params in variables
-            $fileName = $_FILES['post-image']['name'];
-            $fileTmpLoc = $_FILES['post-image']['tmp_name'];
-            $fileType = $_FILES['post-image']['type'];
-            $fileSize = $_FILES['post-image']['size'];
-            $fileErrorMsg = $_FILES['post-image']['error'];
+            $fileName = $_FILES['workImg']['name'];
+            $fileTmpLoc = $_FILES['workImg']['tmp_name'];
+            $fileType = $_FILES['workImg']['type'];
+            $fileSize = $_FILES['workImg']['size'];
+            $fileErrorMsg = $_FILES['workImg']['error'];
             $kaboom = explode('.', $fileName);
             $fileExt = end($kaboom);
 
@@ -84,47 +84,50 @@ if(isset($_POST['add-post'])) {
                 $errors[] = ['title' => 'При загрузке изображения произошла ошибка'];
             }
 
-            //Перемещаем загруженный фал в нужную директорию
+             //Перемещаем загруженный фал в нужную директорию
             $db_file_name = rand(100000000, 999999999) . '.' . $fileExt;
-            $postImgFolderLocation = ROOT . 'usercontent/blog/';
-            $uploadFile = $postImgFolderLocation . $db_file_name;
+            $workImgFolderLocation = ROOT . 'usercontent/portfolio/';
+            $uploadFile = $workImgFolderLocation . $db_file_name;
             $moveResult = move_uploaded_file($fileTmpLoc, $uploadFile);
             if($moveResult != true) {
                 $errors[] = ['title' => 'Ошибка сохранения файла'];
             }
             include_once(ROOT . 'libs/image_resize_imagick.php');
-            
+
             //Устаналиваем размеры для большой картинки блога
-            $target_file = $postImgFolderLocation . $db_file_name;
+            $target_file = $workImgFolderLocation . $db_file_name;
             $wmax = 920;
             $hmax = 620;
             $img = createThumbnailBig($target_file, $wmax, $hmax);
             $img->writeImage($target_file);
-            $post->postImg = $db_file_name;
+            $work->workImg = $db_file_name;
             //Устаналиваем размеры для малой картинки, которая будет отображаться в карточке
-            $target_file = $postImgFolderLocation . $db_file_name;
-            $resized_file = $postImgFolderLocation . '320-' . $db_file_name;
-            $wmax = 320;
-            $hmax = 140;
+            $target_file = $workImgFolderLocation . $db_file_name;
+            $resized_file = $workImgFolderLocation . '320-' . $db_file_name;
+            $wmax = 360;
+            $hmax = 190;
             $img = createThumbnailCrop($target_file, $wmax, $hmax);
             $img->writeImage($resized_file);
-            $post->postImgSmall = '320-' . $db_file_name;
+            $work->workImgSmall = '320-' . $db_file_name;
         }
-        R::store($post);
-        header('Location: ' . HOST . 'blog?result=postCreated');
+
+        R::store($work);
+        header('Location: ' . HOST . 'portfolio?result=workCreated');
         exit();
     }
 }
-    
-    // Готовим контент для центральной части
-    ob_start();
-    include(ROOT . 'templates/_parts/_header.tpl');
-    include(ROOT . 'templates/blog/post-new.tpl');
-    $content = ob_get_contents();
-    ob_end_clean();
-    
-    // Выводим шаблоны
-    include(ROOT . 'templates/_parts/_head.tpl');
-    include(ROOT . 'templates/template.tpl');
-    include(ROOT . 'templates/_parts/_footer.tpl');
-    include(ROOT . 'templates/_parts/_foot.tpl');
+
+// Готовим контент для центральной части
+ob_start();
+include ROOT . "templates/_parts/_header.tpl";
+include ROOT . "templates/portfolio/work-new.tpl";
+$content = ob_get_contents();
+
+// Выводим шаблоны
+ob_end_clean();
+include ROOT . "templates/_parts/_head.tpl";
+include ROOT . "templates/template.tpl";
+include ROOT . "templates/_parts/_footer.tpl";
+include ROOT . "templates/_parts/_foot.tpl";
+
+?>
