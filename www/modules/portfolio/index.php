@@ -4,7 +4,6 @@ $title = "Портфолио -  все работы";
 
 $works = R::find('works', 'ORDER BY id DESC');
 
-
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";

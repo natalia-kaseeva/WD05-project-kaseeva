@@ -37,7 +37,7 @@
                             <?php if($post['post_img_small'] != '') { ?>
                             <div class="upload-file-image-box mt-30">
                                 <img src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post['title']?>">
-                                <input class="button button-delete button--small-delete upload-file-image-box--button-position" type="submit" name="delete-postImg" value="Удалить">
+                                <!-- <input class="button button-delete button--small-delete upload-file-image-box--button-position" type="submit" name="delete-postImg" value="Удалить"> -->
                             </div>
                             <?php } ?>
                     </div>

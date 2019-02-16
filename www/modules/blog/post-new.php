@@ -18,10 +18,6 @@ if(isset($_POST['add-post'])) {
         $errors[] = ['title' => 'Введите текст поста!'];
     }
 
-    if(trim($_POST['postCat']) == '') {
-        $errors[] = ['title' => 'Выберите категорию!'];
-    }
-
     if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
 
     //Запишем параметры картинки в переменные
@@ -53,10 +49,13 @@ if(isset($_POST['add-post'])) {
     if(empty($errors)) {
         $post = R::dispense('posts');
         $post->title = htmlentities($_POST['post-title']);
-        $post->cat = htmlentities($_POST['postCat']);
         $post->text = $_POST['post-text'];
         $post->dataTime = R::isoDateTime();
         $post->authorId = $_SESSION['logged_user']['id'];
+
+        if (isset($_POST['postCat']) != '') {
+            $post->cat = htmlentities($_POST['postCat']);
+        }
 
         //Загрузка изображение для поста
         if(isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {

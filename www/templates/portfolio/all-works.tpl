@@ -6,7 +6,7 @@
 
 	<div class="works-title mb-35">
 		<div class="works-title-left">
-			<h1 class="works-title-text"><span class="works-title-text--bold">Работы</span>, которые сделал я и моя команда</h1>
+			<h1 class="works-title-text"><span class="works-title-text--bold">Работы</span>, которые сделала я и моя команда</h1>
 		</div>
 		<div class="works-title-right">
 			<?php if (isAdmin()) { ?>

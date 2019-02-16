@@ -49,7 +49,6 @@ if(isset($_POST['add-work'])){
 		$work = R::dispense('works');
 		
 		$work->title = htmlentities($_POST['title']);
-//		$work->cat = htmlentities($_POST['work-cat']);
 		$work->text = $_POST['text'];
 		$work->result = $_POST['result'];
 		$work->technologies = $_POST['technologies'];

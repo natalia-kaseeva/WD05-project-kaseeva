@@ -75,3 +75,5 @@ function dataFromPost($fieldName){
 		</div>
 	</div>
 </div>
+
+<script src="<?=HOST?>libs/ckeditor/ckeditor.js"></script>
