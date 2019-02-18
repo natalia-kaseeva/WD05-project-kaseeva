@@ -18,10 +18,6 @@ if(isset($_POST['add-post'])) {
         $errors[] = ['title' => 'Введите текст поста!'];
     }
 
-    /*if(trim($_POST['postCat']) == '') {
-        $errors[] = ['title' => 'Выберите категорию!'];
-    }*/
-
     if (isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
 
     //Запишем параметры картинки в переменные
@@ -30,20 +26,19 @@ if(isset($_POST['add-post'])) {
     $fileType = $_FILES['post-image']['type'];
     $fileSize = $_FILES['post-image']['size'];
     $fileErrorMsg = $_FILES['post-image']['error'];
+    
     if (@getimagesize($fileTmpLoc)) {
         list($width, $height) = getimagesize($fileTmpLoc);
         if ($width < 10 || $height < 10) {
             $errors[] = ['title' =>'Изображение не имеет размеров. Загрузите изображение побольше' ];
         }
-    } /*else {
-        $errors[] = ['title' =>'При загрузке изображения произошла ошибка' ];
-    }*/
+    } 
 
     if ($fileSize > 4194304) {
         $errors[] = ['title' =>'Файл изображения не болжен быть более 4 Mb' ];
     }
     if (!preg_match("/\.(gif|jpg|png|jpeg)$/i", $fileName)) {
-        $errors[] = ['title' => 'Неверный формат файла', 'desc' => '<p>Файл изображения должен быть в формате gif, jpg, png или jpeg</p>'];
+        $errors[] = ['title' => 'Неверный формат файла', 'desc' => 'Файл изображения должен быть в формате gif, jpg, png или jpeg'];
     }
     if ($fileErrorMsg == 1) {
         $errors[] = ['title' =>'При загрузке изображения произошла ошибка. Повторите попытку' ];
@@ -54,10 +49,13 @@ if(isset($_POST['add-post'])) {
     if(empty($errors)) {
         $post = R::dispense('posts');
         $post->title = htmlentities($_POST['post-title']);
-        /*$post->cat = htmlentities($_POST['postCat']);*/
         $post->text = $_POST['post-text'];
         $post->dataTime = R::isoDateTime();
         $post->authorId = $_SESSION['logged_user']['id'];
+
+        if (isset($_POST['postCat']) != '') {
+            $post->cat = htmlentities($_POST['postCat']);
+        }
 
         //Загрузка изображение для поста
         if(isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
@@ -75,8 +73,8 @@ if(isset($_POST['add-post'])) {
                 $errors[] = ['title' => 'Изображение не имеет размеров.', 'desc
                 ' => 'Загрузите изображение с большим разрешением'];
             }
-            if($fileSize > 10485760) {
-                $errors[] = ['title' => 'Размер файла с изображением не должен превышать 10Mb'];
+            if($fileSize > 4194304) {
+                $errors[] = ['title' => 'Размер файла с изображением не должен превышать 4Mb'];
             }
             if(!preg_match('/\.(gif|png|jpg|jpeg)$/i', $fileName)) {
                 $errors[] = ['title' => 'Неверный формат файла.', 'desc' => 'Файл изображения должен быть в формате jpg, png или gif'];
@@ -94,6 +92,7 @@ if(isset($_POST['add-post'])) {
                 $errors[] = ['title' => 'Ошибка сохранения файла'];
             }
             include_once(ROOT . 'libs/image_resize_imagick.php');
+            
             //Устаналиваем размеры для большой картинки блога
             $target_file = $postImgFolderLocation . $db_file_name;
             $wmax = 920;

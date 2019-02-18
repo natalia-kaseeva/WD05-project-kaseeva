@@ -108,6 +108,46 @@ switch ( $uri[0] ) {
 	    include(ROOT . 'modules/contacts/message-delete.php');
 	break;
 
+	case 'about':
+		include "modules/about/index.php";
+		break;
+
+	case 'edit-text':
+		include "modules/about/edit-text.php";
+		break;
+
+	case 'edit-skills':
+		include "modules/about/edit-skills.php";
+		break;
+
+	case 'edit-jobs':
+		include "modules/about/edit-jobs.php";
+		break;
+
+	case 'edit-delete-jobs':
+		include ROOT . "modules/about/edit-delete-jobs.php";
+		break;
+
+	case 'portfolio':
+		require ROOT . "modules/portfolio/index.php";
+		break;
+
+	case 'portfolio/work-new':
+		require ROOT . "modules/portfolio/work-new.php";
+		break;
+
+	case 'portfolio/work-edit':
+		require ROOT . "modules/portfolio/work-edit.php";
+		break;
+
+	case 'portfolio/work-delete':
+		require ROOT . "modules/portfolio/work-delete.php";
+		break;
+		
+	case 'portfolio/work':
+		require ROOT . "modules/portfolio/work.php";
+		break;
+
 	default:
 		echo "Main page / 404";
 		break;

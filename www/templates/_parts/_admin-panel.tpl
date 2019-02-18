@@ -19,8 +19,8 @@
 
             <a href="<?=HOST?>blog/categories"><i class="fas fa-folder"></i>Категории</a>
             
-            <a href="works-add-work.html"><i class="fas fa-plus-circle"></i>Работа</a>
-            <a href="about-me.html"><i class="fas fa-edit"></i>Обо мне</a>
+            <a href="<?=HOST?>portfolio/work-new"><i class="fas fa-plus-circle"></i>Работа</a>
+            <a href="<?=HOST?>about"><i class="fas fa-edit"></i>Обо мне</a>
             <a href="<?=HOST?>contacts"><i class="fas fa-edit"></i>Контакты</a>
             <a href="<?=HOST?>contacts-messages"><i class="fas fa-envelope"></i>Сообщения</a>
         </nav>
