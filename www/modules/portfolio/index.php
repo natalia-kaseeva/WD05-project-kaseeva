@@ -1,8 +1,10 @@
 <?php
 
+$pagination = pagination(3, 'works');
+
 $title = "Портфолио -  все работы";
 
-$works = R::find('works', 'ORDER BY id DESC');
+$works = R::find('works', 'ORDER BY id DESC ' . $pagination['sql_pages_limit']);
 
 // Готовим контент для центральной части
 ob_start();

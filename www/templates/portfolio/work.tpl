@@ -43,17 +43,19 @@
                     </div>
                 </div>
            
-            <?php if($work['work_img'] != '') { ?>
                 <div class="separate-work-image mt-55">
                     <div class="row">
                         <div class="col-10 offset-1">
                             <div class="separate-work-image-preview">
+                                <?php if($work['work_img'] != '') { ?>
                                 <img src="<?=HOST?>usercontent/portfolio/<?=$work['work_img']?>" alt="<?=$work['title']?>" />
+                                <?php } else {?>
+                                <img src="<?=HOST?>usercontent/blog-no-image-big.jpg?>" alt="<?=$work['title']?>" />
+                                <?php }?>
                             </div>
                         </div>
                     </div>
                 </div>
-            <?php } ?>
 
         </div>
         <div class="container">

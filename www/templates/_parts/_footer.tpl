@@ -17,8 +17,11 @@
 					</div>
 					<div class="col-4 no-paddings">
 						<div class="social">
-							<a href="#!" target="_blank">
-								<span class="social-icon"><i class="fab fa-vk"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-twitter"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-youtube"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-instagram"></i></span></a><a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-facebook-f"></i></span></a></div>
+							<a href="https://vk.com/id27679449" target="_blank"><span class="social-icon"><i class="fab fa-vk"></i></span></a>
+								<!-- <a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-twitter"></i></span></a>
+								<a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-youtube"></i></span></a> -->
+								<a href="https://www.instagram.com/natalykass/" target="_blank"><span class="social-icon"><i class="fab fa-instagram"></i></span></a>
+								<a href="https://www.facebook.com/natalia.kaseeva.5" target="_blank"><span class="social-icon"><i class="fab fa-facebook-f"></i></span></a></div>
 					</div>
 				</div>
 			</div>

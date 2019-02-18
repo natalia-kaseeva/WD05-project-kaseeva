@@ -5,7 +5,7 @@
 			<?php if ($work->work_img_small != "") { ?>
 			<img src="<?=HOST?>usercontent/portfolio/<?=$work['work_img_small']?>" alt="<?=$work['title']?> " />
 			<?php } else { ?>
-				<img src="<?=HOST?>usercontent/portfolio/post-default.jpg" alt="<?=$work['title']?>" />
+				<img src="<?=HOST?>usercontent/portfolio-no-image.jpg" alt="<?=$work['title']?>" />
 			<?php } ?>
 
 		</div>

@@ -36,7 +36,7 @@ if(isset($_POST['newMessage'])) {
             $errors[] = ['title' => 'Размер файла с изображением не должен превышать 4Mb.'];
 
         } else if(!preg_match("/\.(gif|jpg|jpeg|png|pdf|doc|docx)$/i", $fileName)) {
-            $errors[] = ['title' => 'Неверный формат файла.', 'desc' => '<p>Файл изображения должен быть в формате gif, jpg, png, pdf, doc и docx.</p>'];
+            $errors[] = ['title' => 'Неверный формат файла.', 'desc' => '<p>Файл  должен быть в формате gif, jpg, png, pdf, doc и docx.</p>'];
 
         } else if($fileErrorMsg == 1) {
             $errors[] = ['title' => 'При загрузке изображения произошла ошибка.'];
