@@ -13,7 +13,7 @@
 
 							<div class="autorization-content-form-help mb-30">
 								<label class="form__label-checkbox">
-									<input class="form__input-checkbox" type="checkbox" checked="checked" />
+									<input class="form__input-checkbox" type="checkbox" checked="checked"name="rememberMe"/>
 									<span class="form__checkbox"> </span>Запомнить меня 
 								</label>
 								<a class="link" href="<?=HOST?>lost-password">Забыл пароль</a>

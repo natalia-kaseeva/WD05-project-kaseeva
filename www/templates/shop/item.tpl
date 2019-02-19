@@ -9,12 +9,12 @@
                     }
                 ?>
 
-                 <?php if(isAdmin()) { ?>
-                   <div class="row flex-content-end">
-                        <a class="button button-edit mr-15" href="<?=HOST?>shop/item-edit?id=<?=$item['id']?>">Редактировать</a>
-                        <a class="button button-delete" href="<?=HOST?>shop/item-delete?id=<?=$item['id']?>">Удалить</a>                      
+                <?php if(isAdmin()) { ?>
+                <div class="row flex-content-end">
+                    <a class="button button-edit mr-15" href="<?=HOST?>shop/item-edit?id=<?=$item['id']?>">Редактировать</a>
+                    <a class="button button-delete" href="<?=HOST?>shop/item-delete?id=<?=$item['id']?>">Удалить</a>                     
                 </div>
-                 <?php } ?>
+                <?php } ?>
 
                  <!-- row -->
                 <div class="row">
@@ -44,7 +44,10 @@
                             </div>
                         </div>
 
-                        <a href="#!" class="button mb-15" id="addToCart">В корзину</a>
+                    <form id="addToCart" method="POST" action="<?=HOST.'addtocart'?>">
+                        <input type="hidden" name="itemId" id="itemId" value="<?=$item['id']?>">
+                        <input class="button mr-20" type="submit" name="addToCart" value="В корзину" />
+                    </form>
 
                         <div class="user-content">
                             <?=$item['desc']?>

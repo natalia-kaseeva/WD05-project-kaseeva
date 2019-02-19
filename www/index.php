@@ -170,6 +170,20 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/shop/item-delete.php";
 		break;
 
+	// ::::::::::::::::::: CART :::::::::::::::::::
+
+	case 'addtocart':
+		include ROOT . "modules/cart/addtocart.php";
+		break;
+
+	case 'cart':
+		include ROOT . "modules/cart/cart.php";
+		break;
+
+	case 'removefromcart':
+		include ROOT . "modules/cart/removefromcart.php";
+		break;
+
 	// ::::::::::::::::::: MAIN / OTHER :::::::::::::::::::
 	
 	default:

@@ -1,6 +1,7 @@
  <!-- build:jsLibs js/libs.js -->
     <script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
 	<!-- build:jsMain js/main.js -->
+	<script src="<?=HOST?>libs/jquery.cookie.js"></script>
 	<script src="<?=HOST?>templates/assets/js/main.js"></script>
 	<script src="<?=HOST?>templates/assets/js/input-file.js"></script>
 
