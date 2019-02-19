@@ -148,6 +148,30 @@ switch ( $uri[0] ) {
 		require ROOT . "modules/portfolio/work.php";
 		break;
 
+	// ::::::::::::::::::: ESHOP :::::::::::::::::::
+
+	case 'shop':
+		include "modules/shop/index.php";
+		break;
+
+	case 'shop/new':
+		include ROOT . "modules/shop/item-new.php";
+		break;
+
+	case 'shop/item':
+		include ROOT . "modules/shop/item.php";
+		break;
+
+	case 'shop/item-edit':
+		include ROOT . "modules/shop/item-edit.php";
+		break;
+
+	case 'shop/item-delete':
+		include ROOT . "modules/shop/item-delete.php";
+		break;
+
+	// ::::::::::::::::::: MAIN / OTHER :::::::::::::::::::
+	
 	default:
 		echo "Main page / 404";
 		break;

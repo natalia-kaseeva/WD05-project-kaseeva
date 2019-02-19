@@ -80,3 +80,56 @@
 .separate-work-image-preview {
   margin: 0 auto;
 }
+
+.flex-content-end {
+  justify-content: flex-end;
+}
+
+.price-holder {
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.price-old {
+  font-size: 26px;
+  text-decoration: line-through;
+  margin-right: 10px;
+  color: #B4B4B4;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 26px;
+}
+
+.price span {
+  font-size: 18px;
+}
+
+.blog__image {
+  margin-bottom: 30px;
+}
+
+.blog__image img {
+  width: 100%;
+  height: auto;
+}
+
+.card__price {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.card__price span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card-box__img-blog {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}

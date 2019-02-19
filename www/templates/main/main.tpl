@@ -45,4 +45,20 @@
             <?php } ?>
         </div>
     </div>
+    <div class="line"></div>
+
+    <div class="blog-entries container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="title-2 title-1--weight"> Новые товары в <a href="<?=HOST?>shop" class="link title-1--underline">магазине</a></h2>
+            </div>
+        </div>
+        <div class="row">
+            <?php foreach ($goods as $item) { ?>
+                <div class="col-md-4">
+                    <?php include ROOT . "templates/shop/_item-card.tpl" ?>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
 </div>

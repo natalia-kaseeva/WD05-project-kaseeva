@@ -13,6 +13,7 @@
 							<a href="<?=HOST?>about">Обо мне</a>
 							<a href="<?=HOST?>portfolio">Работы</a>
 							<a href="<?=HOST?>blog">Блог</a>
+							<a href="<?=HOST?>shop">Магазин</a>
 							<a href="<?=HOST?>contacts">Контакты</a></nav>
 					</div>
 					<div class="col-4 no-paddings">

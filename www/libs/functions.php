@@ -138,4 +138,8 @@ function pagination($results_per_page, $type) {
     return $result;
 }
 
+function price_format($price){
+	return number_format($price, 0, '', ' ');
+}
+
 ?>
