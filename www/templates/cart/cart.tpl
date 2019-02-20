@@ -30,6 +30,8 @@
 			</tbody>
 		</table>
 
+		<a href="<?=HOST?>order-create" class="button button-save mt-20">Оформить заказ</a>
+
 	<?php } else { ?>
 
 		<div class="highlight">
@@ -37,6 +39,5 @@
 		</div>
 
 	<?php } ?>
-
 
 </div>

@@ -49,7 +49,7 @@
                         <input class="button mr-20" type="submit" name="addToCart" value="В корзину" />
                     </form>
 
-                        <div class="user-content">
+                        <div class="mt-20">
                             <?=$item['desc']?>
                         </div>
                     </div>

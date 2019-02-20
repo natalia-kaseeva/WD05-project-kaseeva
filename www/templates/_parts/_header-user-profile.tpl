@@ -13,6 +13,7 @@
                 <p>Пользователь</p>
                 <div class="row user-buttons">
                     <a class="button button-profile" href="<?=HOST?>profile">Профиль</a>
+                    <a class="button button-profile" href="<?=HOST?>myorders">Заказы</a>
                     <a class="button button-profile" href="<?=HOST?>logout">Выход</a>
                 </div>
             </div>

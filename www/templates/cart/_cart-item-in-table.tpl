@@ -15,7 +15,7 @@
 		<?php echo $cookieCartArray[$item->id ]; ?>
 	</td>
 	<td>
-		<?=$item->price?> рублей
+		<?=price_format($item->price)?> рублей
 	</td>
 	<td width="200">
 		<?php echo price_format($cookieCartArray[$item->id ] * $item->price); ?> рублей

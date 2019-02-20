@@ -22,6 +22,7 @@
             <a href="<?=HOST?>shop/new"><i class="fas fa-plus-circle"></i>Товар</a>
             <a href="<?=HOST?>contacts"><i class="fas fa-edit"></i>Контакты</a>
             <a href="<?=HOST?>contacts-messages"><i class="fas fa-envelope"></i>Сообщения</a>
+            <a href="<?=HOST?>orders"><i class="fas fa-shopping-cart"></i>Заказы</a>
         </nav>
     </div>
     <div class="header-admin__right"><a href="<?=HOST?>logout"><i class="fas fa-sign-out-alt"></i>Выход</a></div>

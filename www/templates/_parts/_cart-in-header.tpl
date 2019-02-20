@@ -11,7 +11,7 @@
 		<div class="cart">
 			<a href="<?=HOST?>cart">
 				<i class="fas fa-shopping-cart"></i>
-				<?=$itemsInCart?> товаров
+				<?=orderNumber($itemsInCart)?> 
 			</a>
 		</div>
 	<?php }	?>

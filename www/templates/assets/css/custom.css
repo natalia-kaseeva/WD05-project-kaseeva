@@ -88,7 +88,7 @@
 .price-holder {
   display: flex;
   padding-top: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .price-old {
@@ -157,7 +157,7 @@
   vertical-align: middle;
 }
 
-.delete-from-cart, .delete-from-cart:active {
+.delete-from-cart, .delete-from-cart:after {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -189,4 +189,12 @@
 .table-total>th,
 .table-total>td {
   background-color: #f8f9fa;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
 }
