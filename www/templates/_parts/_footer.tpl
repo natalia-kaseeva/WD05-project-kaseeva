@@ -9,12 +9,13 @@
 						</div>
 					</div>
 					<div class="col-3 no-paddings">
-						<nav class="footer__nav"><a href="<?=HOST?>">Главная</a>
-							<a href="<?=HOST?>about">Обо мне</a>
-							<a href="<?=HOST?>portfolio">Работы</a>
-							<a href="<?=HOST?>blog">Блог</a>
-							<a href="<?=HOST?>shop">Магазин</a>
-							<a href="<?=HOST?>contacts">Контакты</a></nav>
+						<nav class="footer__nav">
+							<a class="footer__nav <?=$uri[0] == '' ? 'footer__nav--active' : '';?>"  href="<?=HOST?>">Главная</a>
+							<a class="footer__nav <?=$uri[0] == 'about' ? 'footer__nav--active' : '';?>" href="<?=HOST?>about">Обо мне</a>
+							<a class="footer__nav <?=$uri[0] == 'portfolio' ? 'footer__nav--active' : '';?>" href="<?=HOST?>portfolio">Работы</a>
+							<a class="footer__nav <?=$uri[0] == 'blog' ? 'footer__nav--active' : '';?>" href="<?=HOST?>blog">Блог</a>
+							<a class="footer__nav <?=$uri[0] == 'shop' ? 'footer__nav--active' : '';?>" href="<?=HOST?>shop">Магазин</a>
+							<a class="footer__nav <?=$uri[0] == 'contacts' ? 'footer__nav--active' : '';?>" href="<?=HOST?>contacts">Контакты</a></nav>
 					</div>
 					<div class="col-4 no-paddings">
 						<div class="social">
