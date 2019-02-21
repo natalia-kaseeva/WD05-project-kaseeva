@@ -1,6 +1,6 @@
 <?php if($_GET['result'] == 'itemDeleted') { ?>
     <div class="notification mb-10">
-        <div class="notification__title notification--success" data-notify-hide>Товар был удален!</div>
+        <div class="notification__title notification--error" data-notify-hide>Товар был удален!</div>
     </div>
 
 <?php } else if($_GET['result'] == 'itemCreated') { ?>

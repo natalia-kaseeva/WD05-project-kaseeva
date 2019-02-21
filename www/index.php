@@ -210,6 +210,32 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/orders/myorder.php";
 		break;
 
+	case 'myorder-delete':
+	    include(ROOT . 'modules/orders/myorder-delete.php');
+	    break;
+
+	case 'order-delete':
+	    include(ROOT . 'modules/orders/order-delete.php');
+	    break;
+
+	// ::::::::::::::::::: PAYMENT SYSTEMS :::::::::::::::::::
+
+	case 'payment-choice':
+		include ROOT . "modules/payments/payment-choice.php";
+		break;
+
+	case 'payment-yandex':
+		include ROOT . "modules/payments/yandex-payment.php";
+		break;
+
+	case 'after-payment':
+		include ROOT . "modules/payments/after-payment.php";
+		break;
+	
+	case 'payment-yandex-notify':
+		include ROOT . "modules/payments/payment-yandex-notify.php";
+		break;
+
 
 	// ::::::::::::::::::: MAIN / OTHER :::::::::::::::::::
 	

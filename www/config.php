@@ -18,5 +18,7 @@ $success = array();
 define('SITE_NAME', 'Личный сайт Натальи Касеевой');
 define('SITE_EMAIL', 'info@webdev03.com');
 define('ADMIN_EMAIL', 'info@rightblog.ru');
+define('YANDEX_WALLET', '410017674789096');
+define('YANDEX_SECRET', '1yK/2nzY82OFspeqW/FPK0PP');
 
 ?>

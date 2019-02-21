@@ -157,15 +157,16 @@
   vertical-align: middle;
 }
 
-.delete-from-cart, .delete-from-cart:after {
+.delete-from-cart, .delete-from-cart:active {
   background-color: transparent;
   border: none;
+  outline: none;
   cursor: pointer;
   color: #037EC6;
   opacity: 0.3;
   transition: 0.2s ease-in;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .delete-from-cart:hover {
@@ -198,3 +199,72 @@
 .text-danger {
   color: #dc3545 !important;
 }
+
+.highlight {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.card {
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
+  box-shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
+  padding: 20px;
+}
+
+.card>.title-1,
+.card>.title-2,
+.card>.title-3,
+.card>.title-4,
+.card>.title-5,
+.card>.title-6 {
+  margin-top: 0;
+}
+
+.card__title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card__select,
+a.card__select {
+  color: #037ec6;
+  font-size: 22px;
+}
+
+.button-profile-delete {
+  border-radius: 22px;
+  border: none;
+  background-color: #b51919;
+  padding-left: 14.04px;
+  padding-right: 14.04px;
+  padding-top: 6.5px;
+  padding-bottom: 6.5px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.button-profile-delete:hover,
+.button-profile-delete:focus {
+  background-color: #e70c0c;
+}
+
+.button-profile-delete:active {
+  background-color: #990101;
+}
+
+.control-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.control-row:last-child {
+  margin-bottom: 0px;
+}
+

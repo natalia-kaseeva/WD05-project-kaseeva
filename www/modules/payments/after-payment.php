@@ -1,15 +1,14 @@
 <?php 
 
-$pagination = pagination(3, 'goods');
+$title = "Оплата заказа совершена - Магазин";
 
-$title = "Все товары - Магазин";
+unset($_SESSION['current_order']);
+unset($_SESSION['order']);
 
-$goods = R::find('goods', 'ORDER BY id DESC ' . $pagination['sql_pages_limit']);
-
-// Готовим контент для центральной части
+// Готовим контент  для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/shop/all-items.tpl";
+include ROOT . "templates/payments/after-payment.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

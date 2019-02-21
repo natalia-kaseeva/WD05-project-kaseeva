@@ -73,7 +73,7 @@
 			<div class="col-6">
 				<label class="label">
 					<div class="fieldset__title">Телефон</div>
-					<input name="phone" class="input" placeholder="Введите телефон" value="555-55-55">
+					<input name="phone" class="input" placeholder="Введите телефон">
 				</label>
 			</div>
 		</div>

@@ -1,15 +1,16 @@
 <?php 
 
-$pagination = pagination(3, 'goods');
+$title = "Оплата заказа - Магазин";
 
-$title = "Все товары - Магазин";
-
-$goods = R::find('goods', 'ORDER BY id DESC ' . $pagination['sql_pages_limit']);
+if ( !isset($_SESSION['order']) ) {
+	header("Location: " . HOST);
+	die();
+}
 
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/shop/all-items.tpl";
+include ROOT . "templates/payments/yandex-payment.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

@@ -33,5 +33,8 @@
 	</table>
 
 	<a href="<?=HOST?>myorders" class="button">← Назад к моим заказам</a>
+	<?php if ( $order->payment == 'no'){ ?>
+	<a class="button button-save ml-10" href="<?=HOST?>payment-choice?id=<?=$order->id?>">Оплатить</a>
+	<?php } ?>
 
 </div>

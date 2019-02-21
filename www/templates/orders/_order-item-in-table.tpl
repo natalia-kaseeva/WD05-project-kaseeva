@@ -19,4 +19,11 @@
 	<td>
 		<?=$order->name?> <?=$order->secondname?>
 	</td>
+	<td>
+		<?=$order->email?>
+	</td>
+	<td>
+		<?=$order->phone?>
+	</td>
+	<td><a class="button button-profile-delete" href="<?=HOST?>order-delete?id=<?=$order->id?>">Удалить</a></td>
 </tr>
